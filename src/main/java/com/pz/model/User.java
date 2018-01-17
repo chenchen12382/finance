@@ -1,11 +1,22 @@
 package com.pz.model;
 
 /**
- * Created by Administrator on 2018/1/16.
+ * Created by TW on 2017/7/31.
  */
 public class User {
+
+    private Integer id;
     private String userName;
     private String password;
+    private String gender;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getUserName() {
         return userName;
@@ -21,5 +32,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }

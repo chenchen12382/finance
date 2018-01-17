@@ -1,17 +1,18 @@
-<!DOCTYPE configuration
-        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 
+<!DOCTYPE configuration    
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-config.dtd"> -->
+<!DOCTYPE configuration    
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"    
+    "D://mybatis-3-config.dtd">
+
 <configuration>
-    <settings>
-        <!-- 驼峰写法对应数据库字段的下划线 -->
-        <setting name="mapUnderscoreToCamelCase" value="true" />
-    </settings>
-    <typeAliases>
-        <package name="com.pz.model"/>
-    </typeAliases>
-    <!--
-    <typeHandlers>
-    <package name="com.shop.core.typehandler"/>
-    </typeHandlers>
-    -->
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+	</settings>
+	
+	<typeAliases>
+		<package name="com.pz.model"/>
+	</typeAliases>
+
 </configuration>
