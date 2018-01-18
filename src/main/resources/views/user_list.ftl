@@ -1,6 +1,6 @@
 <html>
     <head>
-
+        <#include "include/test.ftl" />
     </head>
     <body>
         <table>
@@ -16,6 +16,7 @@
                 <td>${user.Gender}</td>
             </tr>
         [/#list]
+
 
         </table>
 

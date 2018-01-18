@@ -1,6 +1,9 @@
 package com.pz.controller;
+import com.pz.base.BaseController;
+import com.pz.base.ResultInfo;
 import com.pz.model.User;
 import com.pz.service.UserService;
+import com.pz.vo.UserLoginIdentity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -17,7 +21,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/")
-public class UserController {
+public class UserController extends BaseController{
 
     @Autowired
     private UserService userService;
@@ -42,12 +46,21 @@ public class UserController {
     }
 
 
-    @RequestMapping("login")
-    public String login(){
+    @RequestMapping("/")
+    public String index(){
         return "login";
     }
 
+    @RequestMapping("login")
+    @ResponseBody
+    public ResultInfo login(String userName,String password,HttpServletRequest request){
 
+        UserLoginIdentity userLoginIdentity = userService.login(userName,password);
+        request.getSession().setAttribute("user",userLoginIdentity);
+        return success(userLoginIdentity);
+
+
+    }
 
 
     @RequestMapping("main")

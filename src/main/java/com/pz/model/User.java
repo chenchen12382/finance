@@ -9,6 +9,7 @@ public class User {
     private String userName;
     private String password;
     private String gender;
+    private String trueName; //昵称
 
     public Integer getId() {
         return id;
@@ -40,5 +41,13 @@ public class User {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public String getTrueName() {
+        return trueName;
+    }
+
+    public void setTrueName(String trueName) {
+        this.trueName = trueName;
     }
 }

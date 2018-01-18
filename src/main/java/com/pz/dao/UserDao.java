@@ -16,4 +16,9 @@ public interface UserDao {
     List<User> findList();
 
     User findById(@Param(value = "id") Integer userId);
+
+
+    @Select("select id, user_name, password, true_name from t_user "
+            + "where user_name = #{userName}")
+    User findByUserName(@Param("userName") String userName);
 }

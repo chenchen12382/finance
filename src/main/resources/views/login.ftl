@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<body data-type="login">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,11 +17,13 @@
     <link rel="stylesheet" href="/assets/css/amazeui.datatables.min.css" />
     <link rel="stylesheet" href="/assets/css/app.css">
     <script src="/assets/js/jquery.min.js"></script>
-
+    <script src="/assets/js/theme.js"></script>
 </head>
 
-<body data-type="login">
-    <script src="/assets/js/theme.js"></script>
+<script>
+    var ctx = "${ctx}/";
+</script>
+
     <div class="am-g tpl-g">
         <!-- 风格切换 -->
         <div class="tpl-skiner">
@@ -42,8 +44,6 @@
                 <div class="tpl-login-logo">
 
                 </div>
-
-
 
                 <form class="am-form tpl-form-line-form">
                     <div class="am-form-group">
@@ -71,8 +71,15 @@
             </div>
         </div>
     </div>
-    <script src="/assets/js/amazeui.min.js"></script>
-    <script src="/assets/js/app.js"></script>
+
 </body>
-    <script src="/js/login.js"></script>
+
+<footer class="blog-footer">
+    <div class="blog-text-center">© 2017-2018  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 陈琛的个人博客 </div>
+</footer>
+<script src="/assets/js/amazeui.min.js"></script>
+<script src="/assets/js/amazeui.datatables.min.js"></script>
+<script src="/assets/js/dataTables.responsive.min.js"></script>
+<script src="/assets/js/app.js"></script>
+<script src="/js/login.js"></script>
 </html>

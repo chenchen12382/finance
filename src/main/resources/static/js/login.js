@@ -24,16 +24,21 @@ $(document).ready(function() {
         $.ajax({
             async: false,
             type : "POST",
-            url : "/login",
+            url : "login",
             data :data,
             dataType : 'json',
             success : function(resp) {
                 if (resp.resultCode == 1) { // 成功
                     // 把登录后的数据存入cookie
-                    $.cookie("userIdString", resp.result.userIdString);
-                    $.cookie("userName", resp.result.userName);
-                    $.cookie("realName", resp.result.realName);
-                    window.location.href = ctx;
+                    $.AMUI.utils.cookie
+                    $.AMUI.utils.cookie.set("userIdString", resp.result.userIdString);
+                    $.AMUI.utils.cookie.set("userName", resp.result.userName);
+                    $.AMUI.utils. cookie.set("realName", resp.result.realName);
+
+                    // $.cookie("userIdString", resp.result.userIdString);
+                    // $.cookie("userName", resp.result.userName);
+                    // $.cookie("realName", resp.result.realName);
+                    window.location.href = "main";
                 } else { // 失败
                     alert(resp.resultMessage);
                 }
