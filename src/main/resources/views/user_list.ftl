@@ -9,13 +9,13 @@
                 <th>UserName</th>
                 <th>Gender</th>
             </tr>
-        [#list users as user ]
+        <#list users as user >
             <tr>
-                <td>${user.userId}</td>
+                <td>${user.id}</td>
                 <td>${user.userName}</td>
-                <td>${user.Gender}</td>
+                <td>${user.password}</td>
             </tr>
-        [/#list]
+        </#list>
 
 
         </table>
