@@ -63,10 +63,20 @@ public class UserController extends BaseController{
 
     }
 
-
+    /**
+     * 首页
+     * @return
+     */
     @RequestMapping("main")
     public String main(){
         return "main";
     }
+
+
+    @RequestMapping("teacher")
+    public String teacher(){
+        return "teacher";
+    }
+
 
 }
