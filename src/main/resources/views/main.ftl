@@ -257,23 +257,7 @@
 </div>
 </div>
 
-<#--弹出框-->
-<div class="am-modal am-modal-confirm" tabindex="-1" id="my-confirm">
-    <div class="am-modal-dialog">
-        <div class="am-modal-hd">系统提示</div>
-        <div class="am-modal-bd">
-            你，确定要删除这条记录吗？
-        </div>
-        <div class="am-modal-footer">
-            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
-            <span class="am-modal-btn" data-am-modal-confirm>确定</span>
-        </div>
-    </div>
-</div>
-
 <#include "include/common.footer.ftl">
 
 </body>
-<script src="js/login.js"></script>
-
 </html>

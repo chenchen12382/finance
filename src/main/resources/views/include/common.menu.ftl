@@ -135,7 +135,7 @@
 
             <!-- 退出 -->
             <li class="am-text-sm">
-                <a href="javascript:;" id="logout">
+                <a href="javascript:logout();" id="logout">
                     <span class="am-icon-sign-out"></span> 退出
                 </a>
             </li>

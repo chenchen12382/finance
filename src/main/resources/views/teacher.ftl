@@ -35,14 +35,14 @@
                                 <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
                                     <div class="am-form-group tpl-table-list-select">
                                         <select data-am-selected="{btnSize: 'sm'}">
-              <option value="option1">所有类别</option>
-              <option value="option2">IT业界</option>
-              <option value="option3">数码产品</option>
-              <option value="option3">笔记本电脑</option>
-              <option value="option3">平板电脑</option>
-              <option value="option3">只能手机</option>
-              <option value="option3">超极本</option>
-            </select>
+                                          <option value="option1">所有类别</option>
+                                          <option value="option2">IT业界</option>
+                                          <option value="option3">数码产品</option>
+                                          <option value="option3">笔记本电脑</option>
+                                          <option value="option3">平板电脑</option>
+                                          <option value="option3">只能手机</option>
+                                          <option value="option3">超极本</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
@@ -54,17 +54,70 @@
                                     </div>
                                 </div>
 
-                                <div class="am-u-sm-12">
+                                <div class="am-u-sm-12 am-u-md-12 am-u-lg-6">
+                                    <div class="widget am-cf">
+                                    <div class="widget-head am-cf">
+                                        <div class="widget-title am-fl">亲子老师,Dookey ABC 助教</div>
+                                        <div class="widget-function am-fr am-btn-group-xs">
+                                          <button type="button" class="am-btn am-btn-default am-btn-success" id="add_btn" >  <span class="am-icon-plus"></span> 新增</button>
+                                        </div>
+                                    </div>
                                     <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
                                         <thead>
+                                            <tr>
+                                                <th>id</th>
+                                                <th>销课人数起</th>
+                                                <th>销课人数止</th>
+                                                <th>课时费</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                                <#if parentingTeachers ?has_content>
+                                                    <#list parentingTeachers as p>
+                                                    <tr class="gradeX">
+                                                        <td>${p.id}</td>
+                                                        <td>${p.offClassNumStart}</td>
+                                                        <td>${p.offClassNumOver}</td>
+                                                        <td>${p.classMoney}</td>
+                                                        <td>
+                                                            <div class="tpl-table-black-operation">
+                                                                <a href="javascript:edit(${p_index+1});" >
+                                                                    <i class="am-icon-pencil"></i> 编辑
+                                                                </a>
+                                                                <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                                    <i class="am-icon-trash"></i> 删除
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                 </#list>
+
+                                                </#if>
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                </div>
+
+                                <div class="am-u-sm-12 am-u-md-12 am-u-lg-6">
+                                    <div class="widget am-cf">
+                                        <div class="widget-head am-cf">
+                                            <div class="widget-title am-fl">滚动条表格</div>
+                                            <div class="widget-function am-fr">
+                                                <a href="javascript:;" class="am-icon-cog"></a>
+                                            </div>
+                                        </div>
+                                        <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
+                                            <thead>
                                             <tr>
                                                 <th>文章标题</th>
                                                 <th>作者</th>
                                                 <th>时间</th>
                                                 <th>操作</th>
                                             </tr>
-                                        </thead>
-                                        <tbody>
+                                            </thead>
+                                            <tbody>
                                             <tr class="gradeX">
                                                 <td>Amaze UI 模式窗口</td>
                                                 <td>张鹏飞</td>
@@ -157,23 +210,24 @@
                                                 </td>
                                             </tr>
                                             <!-- more data -->
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="am-u-lg-12 am-cf">
-
-                                    <div class="am-fr">
-                                        <ul class="am-pagination tpl-pagination">
-                                            <li class="am-disabled"><a href="#">«</a></li>
-                                            <li class="am-active"><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#">5</a></li>
-                                            <li><a href="#">»</a></li>
-                                        </ul>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
+                                <#--<div class="am-u-lg-12 am-cf">-->
+
+                                    <#--<div class="am-fr">-->
+                                        <#--<ul class="am-pagination tpl-pagination">-->
+                                            <#--<li class="am-disabled"><a href="#">«</a></li>-->
+                                            <#--<li class="am-active"><a href="#">1</a></li>-->
+                                            <#--<li><a href="#">2</a></li>-->
+                                            <#--<li><a href="#">3</a></li>-->
+                                            <#--<li><a href="#">4</a></li>-->
+                                            <#--<li><a href="#">5</a></li>-->
+                                            <#--<li><a href="#">»</a></li>-->
+                                        <#--</ul>-->
+                                    <#--</div>-->
+                                <#--</div>-->
                             </div>
                         </div>
                     </div>
@@ -185,5 +239,5 @@
     <#include "include/common.footer.ftl">
 
 </body>
-
+<script src="js/teacher.js"></script>
 </html>

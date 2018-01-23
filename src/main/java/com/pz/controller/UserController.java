@@ -1,7 +1,9 @@
 package com.pz.controller;
 import com.pz.base.BaseController;
 import com.pz.base.ResultInfo;
+import com.pz.model.ParentingTeacher;
 import com.pz.model.User;
+import com.pz.service.TeacherService;
 import com.pz.service.UserService;
 import com.pz.vo.UserLoginIdentity;
 import org.slf4j.Logger;
@@ -27,7 +29,12 @@ public class UserController extends BaseController{
     @Autowired
     private UserService userService;
 
-    private static Logger logger = LoggerFactory.getLogger(UserController.class);
+    @Autowired
+    private TeacherService teacherService;
+
+
+
+   private static Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @RequestMapping("list")
     public String listUser(Model model) {
@@ -36,8 +43,6 @@ public class UserController extends BaseController{
         List<User> users = userService.findList();
         model.addAttribute("users", users);
         return "user_list";
-
-
     }
 
     @RequestMapping("find/{id}")
@@ -74,7 +79,12 @@ public class UserController extends BaseController{
 
 
     @RequestMapping("teacher")
-    public String teacher(){
+    public String teacher(Model model){
+
+        List<ParentingTeacher> parentingTeachers=teacherService.selectForPage();
+
+        model.addAttribute("parentingTeachers",parentingTeachers);
+
         return "teacher";
     }
 
