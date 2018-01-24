@@ -62,7 +62,7 @@
                                           <button type="button" class="am-btn am-btn-default am-btn-success" id="add_btn" >  <span class="am-icon-plus"></span> 新增</button>
                                         </div>
                                     </div>
-                                    <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
+                                    <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="teacher_qz">
                                         <thead>
                                             <tr>
                                                 <th>id</th>
@@ -76,14 +76,14 @@
 
                                                 <#if parentingTeachers ?has_content>
                                                     <#list parentingTeachers as p>
-                                                    <tr class="gradeX">
+                                                    <tr class="gradeX" id="">
                                                         <td>${p.id}</td>
                                                         <td>${p.offClassNumStart}</td>
                                                         <td>${p.offClassNumOver}</td>
                                                         <td>${p.classMoney}</td>
                                                         <td>
                                                             <div class="tpl-table-black-operation">
-                                                                <a href="javascript:edit(${p_index+1});" >
+                                                                <a href="javascript:edit(${p.id},${p_index});" >
                                                                     <i class="am-icon-pencil"></i> 编辑
                                                                 </a>
                                                                 <a href="javascript:;" class="tpl-table-black-operation-del">
@@ -214,28 +214,43 @@
                                         </table>
                                     </div>
                                 </div>
-                                <#--<div class="am-u-lg-12 am-cf">-->
-
-                                    <#--<div class="am-fr">-->
-                                        <#--<ul class="am-pagination tpl-pagination">-->
-                                            <#--<li class="am-disabled"><a href="#">«</a></li>-->
-                                            <#--<li class="am-active"><a href="#">1</a></li>-->
-                                            <#--<li><a href="#">2</a></li>-->
-                                            <#--<li><a href="#">3</a></li>-->
-                                            <#--<li><a href="#">4</a></li>-->
-                                            <#--<li><a href="#">5</a></li>-->
-                                            <#--<li><a href="#">»</a></li>-->
-                                        <#--</ul>-->
-                                    <#--</div>-->
-                                <#--</div>-->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
+
+
+            <#--亲子老师,Dookey ABC 助教-->
+            <div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt" method="post">
+                <div class="am-modal-dialog">
+                    <div class="am-modal-hd">亲子老师,Dookey ABC 助教</div>
+                    <div class="am-modal-bd">
+                        <form class="am-form" id="qz_form">
+                            <div class="am-form-group">
+                                <label for="doc-ipt-email-1">销课人数起</label>
+                                <input type="number" class="" id="offClassNumStart" name="offClassNumStart" placeholder="销课人数起" required/>
+                            </div>
+                            <div class="am-form-group">
+                                <label for="doc-ipt-email-1">销课人数止</label>
+                                <input type="number" class="" id="offClassNumOver" name="offClassNumOver" placeholder="销课人数止" required/>
+                            </div>
+                            <div class="am-form-group">
+                                <label for="doc-ipt-email-1">课时费</label>
+                                <input type="number" class="" id="classMoney" name="classMoney" placeholder="课时费" required/>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="am-modal-footer">
+                        <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+                        <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+                    </div>
+                </div>
+            </div>
+
+
     <#include "include/common.footer.ftl">
 
 </body>

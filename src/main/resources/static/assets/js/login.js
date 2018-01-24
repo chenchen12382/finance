@@ -42,7 +42,6 @@ $(document).ready(function() {
                 }
             }
         });
-
         // $.post("user/login", data, function(resp) {
         // 	if (resp.resultCode == 1) { // 成功
         // 		// 把登录后的数据存入cookie

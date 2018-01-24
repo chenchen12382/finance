@@ -30,7 +30,6 @@ $(document).ready(function() {
             success : function(resp) {
                 if (resp.resultCode == 1) { // 成功
                     // 把登录后的数据存入cookie
-                    $.AMUI.utils.cookie
                     $.AMUI.utils.cookie.set("userIdString", resp.result.userIdString);
                     $.AMUI.utils.cookie.set("userName", resp.result.userName);
                     $.AMUI.utils. cookie.set("realName", resp.result.realName);
@@ -44,18 +43,6 @@ $(document).ready(function() {
                 }
             }
         });
-
-        // $.post("user/login", data, function(resp) {
-        // 	if (resp.resultCode == 1) { // 成功
-        // 		// 把登录后的数据存入cookie
-        // 		$.cookie("userIdString", resp.result.userIdString);
-        // 		$.cookie("userName", resp.result.userName);
-        // 		$.cookie("realName", resp.result.realName);
-        // 		window.location.href = ctx+"main";
-        // 	} else { // 失败
-        // 		alert(resp.resultMessage);
-        // 	}
-        // });
     });
 });
 
@@ -63,23 +50,16 @@ $(document).ready(function() {
 // 退出系统
 
 function logout() {
-    my_alert("测试")
-}
-
-function my_alert(msg) {
-    $('#my_message').html(msg);
+    $('#my_message').html("确定要退出系统么！");
     $('#my_alert').modal({
         relatedTarget: this,
         onConfirm: function(options) {
-            // $('#my_message').html(msg);
+            $.AMUI.utils.cookie.unset('userIdString');
+            $.AMUI.utils.cookie.unset('userName');
+            $.AMUI.utils.cookie.unset('realName');
+            window.location.href = "/";
 
-            alert("确定！")
-
-        },
-        // closeOnConfirm: false,
-        // onCancel: function() {
-        //     alert('算求，不弄了');
-        // }
+        }
     });
 
 }

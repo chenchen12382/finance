@@ -77,7 +77,6 @@ public class UserController extends BaseController{
         return "main";
     }
 
-
     @RequestMapping("teacher")
     public String teacher(Model model){
 
