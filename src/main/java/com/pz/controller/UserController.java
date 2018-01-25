@@ -1,6 +1,7 @@
 package com.pz.controller;
 import com.pz.base.BaseController;
 import com.pz.base.ResultInfo;
+import com.pz.model.LbsTeacher;
 import com.pz.model.ParentingTeacher;
 import com.pz.model.User;
 import com.pz.service.TeacherService;
@@ -79,13 +80,15 @@ public class UserController extends BaseController{
 
     @RequestMapping("teacher")
     public String teacher(Model model){
-
         List<ParentingTeacher> parentingTeachers=teacherService.selectForPage();
-
+        List<LbsTeacher> lbsTeachers = teacherService.selectForPageLbs();
         model.addAttribute("parentingTeachers",parentingTeachers);
-
+        model.addAttribute("lbsTeachers",lbsTeachers);
         return "teacher";
     }
+
+
+
 
 
 }

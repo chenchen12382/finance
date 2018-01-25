@@ -63,3 +63,12 @@ function logout() {
     });
 
 }
+
+function my_alert(msg) {
+    // $('#msg_title').val(title);
+    $('#msg_result').html(msg);
+    $('#msg_alert').modal({
+        relatedTarget: this,
+    });
+
+}
