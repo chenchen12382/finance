@@ -1,6 +1,10 @@
 <<<<<<< HEAD
 target/
 !.mvn/wrapper/maven-wrapper.jar
+*.log
+*.project
+*.classpath
+
 
 ### STS ###
 .apt_generated

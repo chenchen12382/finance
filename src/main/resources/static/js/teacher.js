@@ -1,16 +1,15 @@
 $('#add_btn').click(function () {
-    var data = {"offClassNumStart":$("#offClassNumStart").val(),'offClassNumOver':$('#offClassNumOver').val(),
-        'classMoney':$('#classMoney').val()}
-    modal(null,data);
+    modal(null);
 });
 
 
-function modal(id,data) {
+function modal(id) {
     var url = ctx+'teacher/add';
     if(id!=null){
         url=ctx+'teacher/update';
     }
-    var data = data;
+    var data = {"offClassNumStart":$("#offClassNumStart").val(),'offClassNumOver':$('#offClassNumOver').val(),
+        'classMoney':$('#classMoney').val(),id:id}
     $('#my-prompt').modal({
         relatedTarget: this,
         onConfirm: function(e) {
@@ -33,19 +32,25 @@ function modal(id,data) {
 
 
 
-function edit(id,row) {
-    // var test=$('#teacher_qz tbody tr').eq(row).find("td")[2].html();
-    // for(var i=0; i<=test; i++)
-    // {
-    //     numberStr = $("#already_question_list tr").eq(i).find("td:first").html();
-    //     filter_numbs.push(numberStr);
-    // }
-
-    alert(test)
+function edit(id) {
  var id = id;
-    var data = {"offClassNumStart":$("#offClassNumStart").val(),'offClassNumOver':$('#offClassNumOver').val(),
-        'classMoney':$('#classMoney').val(),id:id}
- modal(id,data);
+ var url = ctx+'teacher/selectForId'
+ var param={'id':id};
+    var offClassNumStart;
+    var offClassNumOver;
+    var classMoney;
+
+    $.post(url,param,function (result) {
+
+    offClassNumStart = result.offClassNumStart;
+    offClassNumOver = result.offClassNumOver;
+    classMoney = result.classMoney;
+ });
+    $('#offClassNumStart').val(offClassNumStart);
+    $('#offClassNumOver').val(offClassNumOver);
+    $('#classMoney').val(classMoney);
+
+ modal(id);
 }
 
 function  resetValue() {

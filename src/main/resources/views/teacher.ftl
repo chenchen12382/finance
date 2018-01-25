@@ -83,7 +83,7 @@
                                                         <td>${p.classMoney}</td>
                                                         <td>
                                                             <div class="tpl-table-black-operation">
-                                                                <a href="javascript:edit(${p.id},${p_index});" >
+                                                                <a href="javascript:edit(${p.id});" >
                                                                     <i class="am-icon-pencil"></i> 编辑
                                                                 </a>
                                                                 <a href="javascript:;" class="tpl-table-black-operation-del">
