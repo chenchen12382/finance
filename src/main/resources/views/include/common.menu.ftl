@@ -4,7 +4,7 @@
     <header>
         <!-- logo -->
         <div class="am-fl tpl-header-logo">
-            <a href="javascript:;"><img src="assets/img/logo.png" alt=""></a>
+            <a href="javascript:;"><img src="img/logo.png" alt=""></a>
         </div>
 <div class="tpl-header-fluid">
     <!-- 侧边切换 -->
@@ -187,8 +187,8 @@
             </a>
         </li>
         <li class="sidebar-nav-link">
-            <a href="calendar.html">
-                <i class="am-icon-calendar sidebar-nav-link-logo"></i> 日历
+            <a href="role">
+                <i class="am-icon-calendar sidebar-nav-link-logo"></i> 角色管理
             </a>
         </li>
         <li class="sidebar-nav-link">

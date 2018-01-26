@@ -1,9 +1,13 @@
 package com.pz.controller;
+import com.github.miemiedev.mybatis.paginator.domain.PageList;
 import com.pz.base.BaseController;
+import com.pz.base.BaseQuery;
 import com.pz.base.ResultInfo;
 import com.pz.model.LbsTeacher;
 import com.pz.model.ParentingTeacher;
+import com.pz.model.Role;
 import com.pz.model.User;
+import com.pz.service.RoleService;
 import com.pz.service.TeacherService;
 import com.pz.service.UserService;
 import com.pz.vo.UserLoginIdentity;
@@ -32,6 +36,9 @@ public class UserController extends BaseController{
 
     @Autowired
     private TeacherService teacherService;
+
+    @Autowired
+    private RoleService roleService;
 
 
 
@@ -87,7 +94,18 @@ public class UserController extends BaseController{
         return "teacher";
     }
 
+    /**
+     * 角色管理
+     * @return
+     */
+    @RequestMapping("role")
+    public String role(Model model,BaseQuery query){
+        PageList<Role> roles=roleService.findRoleForPage(query);
+        model.addAttribute("roles",roles);
+        model.addAttribute("page",roles.getPaginator());
 
+        return "role";
+    }
 
 
 
