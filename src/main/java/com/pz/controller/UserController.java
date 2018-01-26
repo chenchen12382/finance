@@ -103,7 +103,6 @@ public class UserController extends BaseController{
         PageList<Role> roles=roleService.findRoleForPage(query);
         model.addAttribute("roles",roles);
         model.addAttribute("page",roles.getPaginator());
-
         return "role";
     }
 

@@ -11,6 +11,5 @@ import org.apache.ibatis.annotations.Select;
  */
 public interface RoleDao {
 
-    @Select("select * from t_role where is_valid=1")
     PageList<Role> findRoleForPage(BaseQuery query, PageBounds pageBounds);
 }
