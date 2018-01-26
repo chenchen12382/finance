@@ -81,7 +81,7 @@
                                 ￥27,294
                             </div>
                             <div class="widget-statistic-description">
-                                本季度比去年多收入 <strong>2593元</strong> 人民币
+                                本季度比去年多收入 <strong>25555元</strong> 人民币
                             </div>
                             <span class="widget-statistic-icon am-icon-support"></span>
                         </div>
