@@ -22,10 +22,10 @@
                                     <div class="am-form-group">
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs">
-                                                <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</button>
-                                                <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 保存</button>
-                                                <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 审核</button>
-                                                <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
+                                                <button type="button" class="am-btn am-btn-default am-btn-success" id="add_btn"><span class="am-icon-plus"></span> 新增</button>
+                                                <#--<button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 保存</button>-->
+                                                <#--<button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 审核</button>-->
+                                                <#--<button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>-->
                                             </div>
                                         </div>
                                     </div>
@@ -34,12 +34,12 @@
                                     <div class="am-form-group tpl-table-list-select">
                                         <select data-am-selected="{btnSize: 'sm'}">
               <option value="option1">所有类别</option>
-              <option value="option2">IT业界</option>
-              <option value="option3">数码产品</option>
-              <option value="option3">笔记本电脑</option>
-              <option value="option3">平板电脑</option>
-              <option value="option3">只能手机</option>
-              <option value="option3">超极本</option>
+              <#--<option value="option2">IT业界</option>-->
+              <#--<option value="option3">数码产品</option>-->
+              <#--<option value="option3">笔记本电脑</option>-->
+              <#--<option value="option3">平板电脑</option>-->
+              <#--<option value="option3">只能手机</option>-->
+              <#--<option value="option3">超极本</option>-->
             </select>
                                     </div>
                                 </div>
@@ -220,18 +220,6 @@
 
                                   </#if>
                                     </div>
-
-                                    <#--<div class="am-fr">-->
-                                        <#--<ul class="am-pagination tpl-pagination">-->
-                                            <#--<li class="am-disabled"><a href="#">«</a></li>-->
-                                            <#--<li class="am-active"><a href="#">1</a></li>-->
-                                            <#--<li><a href="#">2</a></li>-->
-                                            <#--<li><a href="#">3</a></li>-->
-                                            <#--<li><a href="#">4</a></li>-->
-                                            <#--<li><a href="#">5</a></li>-->
-                                            <#--<li><a href="#">»</a></li>-->
-                                        <#--</ul>-->
-                                    <#--</div>-->
                                 </div>
                             </div>
                         </div>
@@ -239,11 +227,34 @@
                 </div>
             </div>
         </div>
+
+<#--角色管理-->
+<div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt" >
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">角色管理</div>
+        <div class="am-modal-bd">
+            <form class="am-form" id="role_form">
+                <div class="am-form-group">
+                    <label for="doc-ipt-email-1">职位</label>
+                    <input type="text" class="" id="roleName" name="roleName" placeholder="职位" required/>
+                </div>
+                <div class="am-form-group">
+                    <label for="doc-ipt-email-1">备注</label>
+                    <input type="number" class="" id="roleRemark" name="roleRemark" placeholder="备注" />
+                </div>
+            </form>
+
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+            <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+        </div>
     </div>
-    </div>
+</div>
 
 <#include "include/common.footer.ftl">
 
 </body>
+<script src="js/role.js"></script>
 
 </html>
