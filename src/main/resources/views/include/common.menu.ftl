@@ -192,8 +192,13 @@
             </a>
         </li>
         <li class="sidebar-nav-link">
+            <a href="employee">
+                <i class="am-icon-user sidebar-nav-link-logo"></i> 员工管理
+            </a>
+        </li>
+        <li class="sidebar-nav-link">
             <a href="form.html">
-                <i class="am-icon-wpforms sidebar-nav-link-logo"></i> 表单
+                <i class="am-icon-users sidebar-nav-link-logo"></i> 表单
 
             </a>
         </li>

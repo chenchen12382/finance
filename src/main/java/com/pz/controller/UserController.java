@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -106,6 +107,15 @@ public class UserController extends BaseController{
         return "role";
     }
 
+    @RequestMapping("test")
+    public ResultInfo test(HttpServletRequest request){
+        String session = request.getSession().getId();
+        System.out.println(session);
+        return success("成功！" );
+    }
 
-
+    @RequestMapping("employee")
+    public String employee(){
+        return "employee";
+    }
 }
