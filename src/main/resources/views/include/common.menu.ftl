@@ -197,9 +197,8 @@
             </a>
         </li>
         <li class="sidebar-nav-link">
-            <a href="form.html">
-                <i class="am-icon-users sidebar-nav-link-logo"></i> 表单
-
+            <a href="center">
+                <i class="am-icon-users sidebar-nav-link-logo"></i> 中心管理
             </a>
         </li>
         <li class="sidebar-nav-link">

@@ -3,10 +3,8 @@ import com.github.miemiedev.mybatis.paginator.domain.PageList;
 import com.pz.base.BaseController;
 import com.pz.base.BaseQuery;
 import com.pz.base.ResultInfo;
-import com.pz.model.LbsTeacher;
-import com.pz.model.ParentingTeacher;
-import com.pz.model.Role;
-import com.pz.model.User;
+import com.pz.model.*;
+import com.pz.service.CenterService;
 import com.pz.service.RoleService;
 import com.pz.service.TeacherService;
 import com.pz.service.UserService;
@@ -40,6 +38,9 @@ public class UserController extends BaseController{
 
     @Autowired
     private RoleService roleService;
+
+    @Autowired
+    private CenterService centerService;
 
 
 
@@ -118,4 +119,15 @@ public class UserController extends BaseController{
     public String employee(){
         return "employee";
     }
+
+    @RequestMapping("center")
+    public String center(Model model,BaseQuery query){
+        PageList<Center> centers = centerService.selectForPage(query);
+        model.addAttribute("centers",centers);
+        model.addAttribute("page",centers.getPaginator());
+
+        return "center";
+    }
+
+
 }
