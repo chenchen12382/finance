@@ -66,7 +66,7 @@
                                         <#if roles ?has_content>
                                             <#list roles as r>
                                             <tr class="gradeX" id="">
-                                                <td>${r.id}</td>
+                                                <td>${(page.getPage()-1)*10+(r_index+1)}</td>
                                                 <td>${r.roleName}</td>
                                                 <td>${r.roleRemark}</td>
                                                 <td>${r.updateDate?date}</td>
@@ -240,7 +240,7 @@
                 </div>
                 <div class="am-form-group">
                     <label for="doc-ipt-email-1">备注</label>
-                    <input type="number" class="" id="roleRemark" name="roleRemark" placeholder="备注" />
+                    <input type="text" class="" id="roleRemark" name="roleRemark" placeholder="备注" />
                 </div>
             </form>
 

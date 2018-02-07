@@ -12,7 +12,7 @@
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
                         <div class="widget am-cf">
                             <div class="widget-head am-cf">
-                                <div class="widget-title  am-cf">文章列表</div>
+                                <div class="widget-title  am-cf">中心管理</div>
 
 
                             </div>
@@ -57,8 +57,8 @@
                                         <thead>
                                             <tr>
                                                 <th>id</th>
-                                                <th>职位</th>
-                                                <th>备注</th>
+                                                <th>中心</th>
+                                                <th>区域</th>
                                                 <th>更新时间</th>
                                             </tr>
                                         </thead>
@@ -66,7 +66,9 @@
                                         <#if centers ?has_content>
                                             <#list centers as c>
                                             <tr class="gradeX" id="">
-                                                <td>${c.id}</td>
+                                                <#if page?has_content>
+                                                    <td>${(page.getPage()-1)*10+(c_index+1)}</td>
+                                                </#if>
                                                 <td>${c.center}</td>
                                                 <td>${c.district}</td>
                                                 <td>${c.updateDate?date}</td>
@@ -135,16 +137,16 @@
 <#--角色管理-->
 <div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt" >
     <div class="am-modal-dialog">
-        <div class="am-modal-hd">角色管理</div>
+        <div class="am-modal-hd">中心管理</div>
         <div class="am-modal-bd">
             <form class="am-form" id="role_form">
                 <div class="am-form-group">
-                    <label for="doc-ipt-email-1">职位</label>
-                    <input type="text" class="" id="roleName" name="roleName" placeholder="职位" required/>
+                    <label for="doc-ipt-email-1">中心</label>
+                    <input type="text" class="" id="center" name="center" placeholder="中心" required/>
                 </div>
                 <div class="am-form-group">
-                    <label for="doc-ipt-email-1">备注</label>
-                    <input type="number" class="" id="roleRemark" name="roleRemark" placeholder="备注" />
+                    <label for="doc-ipt-email-1">区域</label>
+                    <input type="text" class="" id="district" name="district" placeholder="区域" />
                 </div>
             </form>
 
@@ -159,6 +161,6 @@
 <#include "include/common.footer.ftl">
 
 </body>
-<script src="js/role.js"></script>
+<script src="js/center.js"></script>
 
 </html>

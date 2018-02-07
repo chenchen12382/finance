@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pz.dao.EmployeeDao">
+
+    <select id="selectForPage" resultType="Employee" >
+      select id,name,center,position,create_date,is_valid,update_date from t_employee where is_valid=1
+    </select>
+
+
+
+
+</mapper>

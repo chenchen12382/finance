@@ -57,25 +57,27 @@
                                         <thead>
                                             <tr>
                                                 <th>id</th>
-                                                <th>职位</th>
-                                                <th>备注</th>
+                                                <th>员工姓名</th>
+                                                <th>中心</th>
+                                                <th>员工职位</th>
                                                 <th>更新时间</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <#if roles ?has_content>
-                                            <#list roles as r>
+                                        <#if employees ?has_content>
+                                            <#list employees as e>
                                             <tr class="gradeX" id="">
-                                                <td>${r.id}</td>
-                                                <td>${r.roleName}</td>
-                                                <td>${r.roleRemark}</td>
-                                                <td>${r.updateDate?date}</td>
+                                                <td>${(page.getPage()-1)*10+(e_index+1)}</td>
+                                                <td>${e.name}</td>
+                                                <td>${e.center}</td>
+                                                <td>${e.position}</td>
+                                                <td>${e.updateDate?date}</td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
-                                                        <a href="javascript:edit(${r.id});" >
+                                                        <a href="javascript:edit(${e.id});" >
                                                             <i class="am-icon-pencil"></i> 编辑
                                                         </a>
-                                                        <a href="javascript:remove(${r.id});" class="tpl-table-black-operation-del">
+                                                        <a href="javascript:remove(${e.id});" class="tpl-table-black-operation-del">
                                                             <i class="am-icon-trash"></i> 删除
                                                         </a>
                                                     </div>
@@ -135,15 +137,15 @@
 <#--角色管理-->
 <div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt" >
     <div class="am-modal-dialog">
-        <div class="am-modal-hd">角色管理</div>
+        <div class="am-modal-hd">员工管理</div>
         <div class="am-modal-bd">
             <form class="am-form" id="role_form">
                 <div class="am-form-group">
-                    <label for="doc-ipt-email-1">职位</label>
+                    <label for="doc-ipt-email-1">员工姓名</label>
                     <input type="text" class="" id="roleName" name="roleName" placeholder="职位" required/>
                 </div>
                 <div class="am-form-group">
-                    <label for="doc-ipt-email-1">备注</label>
+                    <label for="doc-ipt-email-1">中心</label>
                     <input type="number" class="" id="roleRemark" name="roleRemark" placeholder="备注" />
                 </div>
             </form>

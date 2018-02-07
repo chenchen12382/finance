@@ -4,10 +4,7 @@ import com.pz.base.BaseController;
 import com.pz.base.BaseQuery;
 import com.pz.base.ResultInfo;
 import com.pz.model.*;
-import com.pz.service.CenterService;
-import com.pz.service.RoleService;
-import com.pz.service.TeacherService;
-import com.pz.service.UserService;
+import com.pz.service.*;
 import com.pz.vo.UserLoginIdentity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,6 +39,8 @@ public class UserController extends BaseController{
     @Autowired
     private CenterService centerService;
 
+    @Autowired
+    private EmployeeService employeeService;
 
 
    private static Logger logger = LoggerFactory.getLogger(UserController.class);
@@ -116,7 +115,12 @@ public class UserController extends BaseController{
     }
 
     @RequestMapping("employee")
-    public String employee(){
+    public String employee(Model model,BaseQuery query){
+
+        PageList<Employee> employees = employeeService.selectForPage(query);
+        model.addAttribute("employees",employees);
+        model.addAttribute("page",employees.getPaginator());
+
         return "employee";
     }
 

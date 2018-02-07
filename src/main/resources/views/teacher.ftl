@@ -77,7 +77,7 @@
                                                 <#if parentingTeachers ?has_content>
                                                     <#list parentingTeachers as p>
                                                     <tr class="gradeX" id="">
-                                                        <td>${p.id}</td>
+                                                        <td>${p_index+1}</td>
                                                         <td>${p.offClassNumStart}</td>
                                                         <td>${p.offClassNumOver}</td>
                                                         <td>${p.classMoney}</td>
@@ -122,7 +122,7 @@
                                             <#if lbsTeachers ?has_content>
                                                 <#list lbsTeachers as lbs>
                                                 <tr class="gradeX" id="">
-                                                    <td>${lbs.id}</td>
+                                                    <td>${lbs_index+1}</td>
                                                     <td>${lbs.level}</td>
                                                     <td>${lbs.offClassNum}</td>
                                                     <td>${lbs.classMoney}</td>
