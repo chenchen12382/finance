@@ -9,6 +9,8 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2018/2/6.
  */
@@ -28,4 +30,7 @@ public interface CenterDao {
 
     @Update("update t_center set center=#{center},district=#{district},update_date=now() where id=#{id}")
     void update(Center center);
+
+    @Select("select * from t_center where is_valid=1")
+    List<Center> findAllCenter();
 }

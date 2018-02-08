@@ -8,6 +8,8 @@ import com.pz.model.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2018/1/26.
  */
@@ -43,5 +45,11 @@ public class RoleService  {
 
         AssertUtil.intIsNotEmpty(id,"请选择后删除！");
         roleDao.delete(id);
+    }
+
+    public List<Role> findAllRole() {
+
+        List<Role> roles=  roleDao.findAllRole();
+        return roles;
     }
 }

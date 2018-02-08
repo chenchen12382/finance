@@ -3,7 +3,9 @@ package com.pz.controller;
 import com.pz.base.BaseController;
 import com.pz.base.ResultInfo;
 import com.pz.model.Center;
+import com.pz.model.Employee;
 import com.pz.service.CenterService;
+import com.pz.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,46 +18,46 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class EmployeeController extends BaseController {
 
-//    @Autowired
-//    private CenterService centerService;
-//
-//
-//
-//
-//
-//    @RequestMapping("add")
-//    @ResponseBody
-//    public ResultInfo insert(Center center){
-//
-//        centerService.insert(center);
-//
-//        return success("添加成功");
-//
-//    }
-//
-//    @RequestMapping("selectForId")
-//    @ResponseBody
-//    public Center selectForId(Integer id){
-//        Center center = centerService.selectForId(id);
-//        return center;
-//
-//    }
-//
-//
-//    @RequestMapping("update")
-//    @ResponseBody
-//    public  ResultInfo update(Center center){
-//        centerService.update(center);
-//        return success("修改成功");
-//    }
-//
-//
-//    @RequestMapping("delete")
-//    @ResponseBody
-//    public  ResultInfo delete(Integer id){
-//        centerService.delete(id);
-//        return success("删除成功");
-//    }
+    @Autowired
+    private EmployeeService employeeService;
+
+
+
+
+
+    @RequestMapping("add")
+    @ResponseBody
+    public ResultInfo insert(Employee employee){
+
+        employeeService.insert(employee);
+
+        return success("添加成功");
+
+    }
+
+    @RequestMapping("selectForId")
+    @ResponseBody
+    public Employee selectForId(Integer id){
+        Employee employee = employeeService.selectForId(id);
+        return employee;
+
+    }
+
+
+    @RequestMapping("update")
+    @ResponseBody
+    public  ResultInfo update(Employee employee){
+        employeeService.update(employee);
+        return success("修改成功");
+    }
+
+
+    @RequestMapping("delete")
+    @ResponseBody
+    public  ResultInfo delete(Integer id){
+        employeeService.delete(id);
+        return success("删除成功");
+    }
 
 
 }

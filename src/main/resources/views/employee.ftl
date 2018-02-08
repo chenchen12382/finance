@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <#include "include/common.header.ftl">
 
@@ -142,11 +142,34 @@
             <form class="am-form" id="role_form">
                 <div class="am-form-group">
                     <label for="doc-ipt-email-1">员工姓名</label>
-                    <input type="text" class="" id="roleName" name="roleName" placeholder="职位" required/>
+                    <input type="text" class="" id="name" name="name" placeholder="员工姓名"  required/>
                 </div>
                 <div class="am-form-group">
-                    <label for="doc-ipt-email-1">中心</label>
-                    <input type="number" class="" id="roleRemark" name="roleRemark" placeholder="备注" />
+                    <label for="doc-ipt-email-1">中心</label></br>
+                    <select id="center" data-am-selected="{btnWidth: '100%',searchBox: 1, btnStyle: 'primary',maxHeight: 200}" >
+                        <option value="">-=请选择一项=-</option>
+                        <#if centers ?has_content>
+                            <#list centers as center>
+                                <option value="${center.center}">${center.center}</option>
+                            </#list>
+                        </#if>
+                        <#--<option value="option1">选项一...</option>-->
+                        <#--<option value="option2">选项二.....</option>-->
+                        <#--<option value="option3">选项三........</option>-->
+                    </select>
+                    <#--<input type="number" class="" id="roleRemark" name="roleRemark" placeholder="中心" />-->
+                </div>
+                <div class="am-form-group">
+                    <label for="doc-ipt-email-1">员工职位</label></br>
+                    <select id="position" data-am-selected="{btnWidth: '100%',searchBox: 1, btnStyle: 'secondary',maxHeight: 200}" >
+                    <#if roles ?has_content>
+                        <option value="">-=请选择一项=-</option>
+                        <#list roles as role>
+                            <option value="${role.roleName}">${role.roleName}</option>
+                        </#list>
+                    </#if>
+                    </select>
+                <#--<input type="number" class="" id="roleRemark" name="roleRemark" placeholder="中心" />-->
                 </div>
             </form>
 
@@ -161,6 +184,6 @@
 <#include "include/common.footer.ftl">
 
 </body>
-<script src="js/role.js"></script>
+<script src="js/employee.js"></script>
 
 </html>

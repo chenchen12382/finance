@@ -9,6 +9,8 @@ import com.pz.model.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2018/2/6.
  */
@@ -62,4 +64,8 @@ public class CenterService {
         AssertUtil.isNotEmpty(center.getDistrict(),"请输入区域");
     }
 
+    public List<Center> findAllCenter() {
+        List<Center> centers = centerDao.findAllCenter();
+        return centers;
+    }
 }

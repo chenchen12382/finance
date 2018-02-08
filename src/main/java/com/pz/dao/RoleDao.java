@@ -9,6 +9,8 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2018/1/26.
  */
@@ -27,4 +29,7 @@ public interface RoleDao {
 
     @Update("update t_role set is_valid=0 where id=#{id}")
     void delete(@Param("id") Integer id);
+
+    @Select("select * from t_role where is_valid=1")
+    List<Role> findAllRole();
 }

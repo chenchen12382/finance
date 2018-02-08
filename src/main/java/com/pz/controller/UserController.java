@@ -118,6 +118,10 @@ public class UserController extends BaseController{
     public String employee(Model model,BaseQuery query){
 
         PageList<Employee> employees = employeeService.selectForPage(query);
+        List<Center> centers = centerService.findAllCenter();
+        List<Role> roles = roleService.findAllRole();
+        model.addAttribute("centers",centers);
+        model.addAttribute("roles",roles);
         model.addAttribute("employees",employees);
         model.addAttribute("page",employees.getPaginator());
 
