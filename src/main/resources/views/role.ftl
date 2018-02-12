@@ -68,7 +68,7 @@
                                             <tr class="gradeX" id="">
                                                 <td>${(page.getPage()-1)*10+(r_index+1)}</td>
                                                 <td>${r.roleName}</td>
-                                                <td>${r.roleRemark}</td>
+                                                <td>${r.roleRemark?default("")}</td>
                                                 <td>${r.updateDate?date}</td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">

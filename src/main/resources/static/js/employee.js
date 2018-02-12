@@ -51,7 +51,12 @@ function edit(id) {
             $('#name').val(result.name);
             $('#center').val(result.center);
             $('#position').val(result.position);
+            // $('#center').find('option').eq(2).attr('selected', true);
+            // $('#position').selected(result.position);
 
+
+            // $("#center").attr("value", result.center);
+            // $("#position").attr("value", result.position);
 
             // roleName = result.roleName;
             // roleRemark = result.roleRemark;
