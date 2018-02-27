@@ -137,5 +137,16 @@ public class UserController extends BaseController{
         return "center";
     }
 
+    /**
+     * 计算
+     */
+    @RequestMapping("compute")
+    public String compute(Model model,BaseQuery query){
+//        PageList<Center> centers = centerService.selectForPage(query);
+//        model.addAttribute("centers",centers);
+//        model.addAttribute("page",centers.getPaginator());
+
+        return "compute";
+    }
 
 }

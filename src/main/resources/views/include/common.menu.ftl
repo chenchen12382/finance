@@ -182,6 +182,11 @@
             </a>
         </li>
         <li class="sidebar-nav-link" >
+            <a href="compute" >
+                <i class="am-icon-building-o sidebar-nav-link-logo"></i> 薪酬计算
+            </a>
+        </li>
+        <li class="sidebar-nav-link" >
             <a href="teacher" >
                 <i class="am-icon-table sidebar-nav-link-logo"></i> 教师计费方案
             </a>
