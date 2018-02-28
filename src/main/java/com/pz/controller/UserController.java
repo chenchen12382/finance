@@ -142,10 +142,8 @@ public class UserController extends BaseController{
      */
     @RequestMapping("compute")
     public String compute(Model model,BaseQuery query){
-//        PageList<Center> centers = centerService.selectForPage(query);
-//        model.addAttribute("centers",centers);
-//        model.addAttribute("page",centers.getPaginator());
-
+          List<Employee> employees = employeeService.findAll();
+          model.addAttribute("employees",employees);
         return "compute";
     }
 

@@ -25,7 +25,10 @@
         <ul>
             <!-- 欢迎语 -->
             <li class="am-text-sm tpl-header-navbar-welcome">
-                <a href="javascript:;">欢迎你, <span>${user.realName}</span> </a>
+                <#if user?has_content>
+                    <a href="javascript:;">欢迎你, <span>${user.realName}</span> </a>
+                </#if>
+
             </li>
 
             <!-- 新邮件 -->
@@ -168,7 +171,10 @@
             </div>
             <span class="user-panel-logged-in-text">
               <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
-            ${user.realName}
+                <#if user?has_content>
+                 ${user.realName}
+                </#if>
+
           </span>
             <a href="javascript:;" class="tpl-user-panel-action-link"> <span class="am-icon-pencil"></span> 账号设置</a>
         </div>

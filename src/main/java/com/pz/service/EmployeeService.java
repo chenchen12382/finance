@@ -8,6 +8,8 @@ import com.pz.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2018/2/7.
  */
@@ -50,5 +52,10 @@ public class EmployeeService {
         AssertUtil.isNotEmpty(employee.getName(),"请填写姓名");
         AssertUtil.isNotEmpty(employee.getCenter(),"请填写中心");
         AssertUtil.isNotEmpty(employee.getPosition(),"请填写职位");
+    }
+
+    public List<Employee> findAll() {
+        List<Employee> employees = employeeDao.findAll();
+        return employees;
     }
 }

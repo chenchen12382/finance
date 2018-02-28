@@ -29,7 +29,7 @@
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
                         <div class="widget am-cf">
                             <div class="widget-head am-cf">
-                                <div class="widget-title am-fl">线条表单</div>
+                                <div class="widget-title am-fl">薪酬计算</div>
                                 <div class="widget-function am-fr">
                                     <a href="javascript:;" class="am-icon-cog"></a>
                                 </div>
@@ -37,11 +37,28 @@
                             <div class="widget-body am-fr">
 
                                 <form class="am-form tpl-form-line-form">
+
+                                    <div class="am-form-group">
+                                        <label for="user-phone" class="am-u-sm-3 am-form-label">姓名: <span class="tpl-form-line-small-title">name</span></label>
+                                        <div class="am-u-sm-9">
+                                            <select data-am-selected="{searchBox: 1}" style="display: none;">
+                                                <option value="">-=请选择一项=-</option>
+                                            <#if employees ?has_content>
+                                                <#list employees as employee>
+                                                    <option value="${employee.name}">${employee.name}--${employee.position}--${employee.center}</option>
+                                                </#list>
+                                            </#if>
+                                            </select>
+
+                                        </div>
+                                    </div>
+
+
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-3 am-form-label">标题 <span class="tpl-form-line-small-title">Title</span></label>
                                         <div class="am-u-sm-9">
                                             <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入标题文字">
-                                            <small>请填写标题文字10-20字左右。</small>
+                                            <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
                                     </div>
 
@@ -57,10 +74,10 @@
                                         <label for="user-phone" class="am-u-sm-3 am-form-label">作者 <span class="tpl-form-line-small-title">Author</span></label>
                                         <div class="am-u-sm-9">
                                             <select data-am-selected="{searchBox: 1}" style="display: none;">
-  <option value="a">-The.CC</option>
-  <option value="b">夕风色</option>
-  <option value="o">Orange</option>
-</select>
+                                              <option value="a">-The.CC</option>
+                                              <option value="b">夕风色</option>
+                                              <option value="o">Orange</option>
+                                            </select>
 
                                         </div>
                                     </div>

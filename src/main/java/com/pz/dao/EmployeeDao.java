@@ -9,6 +9,8 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2018/2/7.
  */
@@ -28,4 +30,7 @@ public interface EmployeeDao {
 
     @Update("update t_employee set is_valid = 0 where id=#{id}")
     void delete(@Param("id") Integer id);
+
+    @Select("select * from t_employee where is_valid=1")
+    List<Employee> findAll();
 }

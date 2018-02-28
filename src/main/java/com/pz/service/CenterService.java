@@ -5,6 +5,7 @@ import com.pz.base.AssertUtil;
 import com.pz.base.BaseQuery;
 import com.pz.dao.CenterDao;
 import com.pz.model.Center;
+import com.pz.model.Employee;
 import com.pz.model.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,8 @@ public class CenterService {
 
     @Autowired
     private CenterDao centerDao;
+
+
 
 
     /**
@@ -68,4 +71,6 @@ public class CenterService {
         List<Center> centers = centerDao.findAllCenter();
         return centers;
     }
+
+
 }
