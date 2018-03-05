@@ -55,10 +55,26 @@
 
 
                                     <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-3 am-form-label">标题 <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-3 am-form-label">岗位工资: <span class="tpl-form-line-small-title">Title</span></label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入标题文字">
+                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入岗位工资">
                                             <#--<small>请填写标题文字10-20字左右。</small>-->
+                                        </div>
+                                    </div>
+
+                                    <div class="am-form-group">
+                                        <label for="user-name" class="am-u-sm-3 am-form-label">绩效工资: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入绩效工资">
+                                        <#--<small>请填写标题文字10-20字左右。</small>-->
+                                        </div>
+                                    </div>
+
+                                    <div class="am-form-group">
+                                        <label for="user-name" class="am-u-sm-3 am-form-label">保密费: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入保密费">
+                                        <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
                                     </div>
 
