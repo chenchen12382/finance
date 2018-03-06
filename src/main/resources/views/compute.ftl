@@ -79,6 +79,60 @@
                                     </div>
 
                                     <div class="am-form-group">
+                                        <label for="user-name" class="am-u-sm-3 am-form-label">奖金提成: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入奖金提成">
+                                        <#--<small>请填写标题文字10-20字左右。</small>-->
+                                        </div>
+                                    </div>
+
+                                    <div class="am-form-group">
+                                        <label for="user-name" class="am-u-sm-3 am-form-label">课时费: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入课时费">
+                                        <#--<small>请填写标题文字10-20字左右。</small>-->
+                                        </div>
+                                    </div>
+
+                                    <div class="am-form-group">
+                                    <label for="user-name" class="am-u-sm-3 am-form-label">补发工资: <span class="tpl-form-line-small-title">Title</span></label>
+                                    <div class="am-u-sm-9">
+                                        <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入补发工资">
+                                    <#--<small>请填写标题文字10-20字左右。</small>-->
+                                    </div>
+                                </div>
+                                    <div class="am-form-group">
+                                        <label for="user-name" class="am-u-sm-3 am-form-label">饭贴: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入饭贴">
+                                        <#--<small>请填写标题文字10-20字左右。</small>-->
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <label for="user-name" class="am-u-sm-3 am-form-label">津贴: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入津贴">
+                                        <#--<small>请填写标题文字10-20字左右。</small>-->
+                                        </div>
+                                    </div>
+
+                                    <div class="am-form-group">
+                                        <label for="user-name" class="am-u-sm-3 am-form-label">绩效系数: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入绩效系数">
+                                        <#--<small>请填写标题文字10-20字左右。</small>-->
+                                        </div>
+                                    </div>
+
+                                    <div class="am-form-group">
+                                        <label for="user-name" class="am-u-sm-3 am-form-label">续班奖金: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入续班奖金">
+                                        <#--<small>请填写标题文字10-20字左右。</small>-->
+                                        </div>
+                                    </div>
+
+                                    <div class="am-form-group">
                                         <label for="user-email" class="am-u-sm-3 am-form-label">发布时间 <span class="tpl-form-line-small-title">Time</span></label>
                                         <div class="am-u-sm-9">
                                             <input type="text" class="am-form-field tpl-form-no-bg" placeholder="发布时间" data-am-datepicker="" readonly="">
@@ -105,20 +159,20 @@
                                         </div>
                                     </div>
 
-                                    <div class="am-form-group">
-                                        <label for="user-weibo" class="am-u-sm-3 am-form-label">封面图 <span class="tpl-form-line-small-title">Images</span></label>
-                                        <div class="am-u-sm-9">
-                                            <div class="am-form-group am-form-file">
-                                                <div class="tpl-form-file-img">
-                                                    <img src="assets/img/a5.png" alt="">
-                                                </div>
-                                                <button type="button" class="am-btn am-btn-danger am-btn-sm">
-    <i class="am-icon-cloud-upload"></i> 添加封面图片</button>
-                                                <input id="doc-form-file" type="file" multiple="">
-                                            </div>
+                                    <#--<div class="am-form-group">-->
+                                        <#--<label for="user-weibo" class="am-u-sm-3 am-form-label">封面图 <span class="tpl-form-line-small-title">Images</span></label>-->
+                                        <#--<div class="am-u-sm-9">-->
+                                            <#--<div class="am-form-group am-form-file">-->
+                                                <#--<div class="tpl-form-file-img">-->
+                                                    <#--<img src="assets/img/a5.png" alt="">-->
+                                                <#--</div>-->
+                                                <#--<button type="button" class="am-btn am-btn-danger am-btn-sm">-->
+    <#--<i class="am-icon-cloud-upload"></i> 添加封面图片</button>-->
+                                                <#--<input id="doc-form-file" type="file" multiple="">-->
+                                            <#--</div>-->
 
-                                        </div>
-                                    </div>
+                                        <#--</div>-->
+                                    <#--</div>-->
 
                                     <div class="am-form-group">
                                         <label for="user-weibo" class="am-u-sm-3 am-form-label">添加分类 <span class="tpl-form-line-small-title">Type</span></label>
