@@ -7,19 +7,18 @@
 
         <!-- 内容区域 -->
         <div class="tpl-content-wrapper">
+            <#--<div class="container-fluid am-cf">-->
+                <#--&lt;#&ndash;<div class="row">&ndash;&gt;-->
+                    <#--&lt;#&ndash;<div class="am-u-sm-12 am-u-md-12 am-u-lg-9">&ndash;&gt;-->
+                        <#--&lt;#&ndash;<div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 薪酬计算工具 </div>&ndash;&gt;-->
+                        <#--&lt;#&ndash;<p class="page-header-description">薪酬计算工具。</p>&ndash;&gt;-->
+                    <#--&lt;#&ndash;</div>&ndash;&gt;-->
+                    <#--&lt;#&ndash;<div class="am-u-lg-3 tpl-index-settings-button">&ndash;&gt;-->
+                        <#--&lt;#&ndash;<button type="button" class="page-header-button"><span class="am-icon-paint-brush"></span> </button>&ndash;&gt;-->
+                    <#--&lt;#&ndash;</div>&ndash;&gt;-->
+                <#--&lt;#&ndash;</div>&ndash;&gt;-->
 
-            <div class="container-fluid am-cf">
-                <div class="row">
-                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-9">
-                        <div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 表单 <small>Amaze UI</small></div>
-                        <p class="page-header-description">Amaze UI 有许多不同的表格可用。</p>
-                    </div>
-                    <div class="am-u-lg-3 tpl-index-settings-button">
-                        <button type="button" class="page-header-button"><span class="am-icon-paint-brush"></span> 设置</button>
-                    </div>
-                </div>
-
-            </div>
+            <#--</div>-->
 
             <div class="row-content am-cf">
 
@@ -39,169 +38,125 @@
                                 <form class="am-form tpl-form-line-form">
 
                                     <div class="am-form-group">
-                                        <label for="user-phone" class="am-u-sm-3 am-form-label">姓名: <span class="tpl-form-line-small-title">name</span></label>
-                                        <div class="am-u-sm-9">
-                                            <select data-am-selected="{searchBox: 1}" style="display: none;">
+                                        <label for="user-phone" class="am-u-sm-2 am-form-label">姓名: <span class="tpl-form-line-small-title">name</span></label>
+                                        <div class="am-u-sm-10">
+                                            <select data-am-selected="{searchBox: 1}" style="display: none;" id="select_name">
                                                 <option value="">-=请选择一项=-</option>
                                             <#if employees ?has_content>
                                                 <#list employees as employee>
-                                                    <option value="${employee.name}">${employee.name}--${employee.position}--${employee.center}</option>
+                                                    <option value="${employee.name},${employee.position},${employee.center}">${employee.name}--${employee.position}--${employee.center}</option>
                                                 </#list>
                                             </#if>
                                             </select>
+                                               &nbsp;&nbsp;&nbsp;&nbsp; <button type="button" id="compute_btn" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提成计算</button>
+                                        </div>
+                                    </div>
+                                    <h2 style="text-align:center">应发项目</h2>
 
+                                    <div class="am-form-group">
+                                        <label for="user-name" class="am-u-sm-2 am-form-label">底薪: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-4">
+                                            <input type="number" class="tpl-form-input" id="f_dx" placeholder="">
+                                        <#--<small>请填写标题文字10-20字左右。</small>-->
+                                        </div>
+                                        <label for="user-name" class="am-u-sm-2 am-form-label"> <span class="tpl-form-line-small-title"></span></label>
+                                        <div class="am-u-sm-4">
+                                            <#--<input type="text" class="tpl-form-input" id="user-name" placeholder="请输入绩效系数">-->
+                                        <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
                                     </div>
 
 
                                     <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-3 am-form-label">岗位工资: <span class="tpl-form-line-small-title">Title</span></label>
-                                        <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入岗位工资">
+                                        <label for="user-name" class="am-u-sm-2 am-form-label">岗位工资: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-4">
+                                            <input type="number" class="tpl-form-input" id="user-name" placeholder="请输入岗位工资">
                                             <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                    </div>
-
-                                    <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-3 am-form-label">绩效工资: <span class="tpl-form-line-small-title">Title</span></label>
-                                        <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入绩效工资">
+                                        <label for="user-name" class="am-u-sm-2 am-form-label">绩效工资: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-4">
+                                            <input type="number" class="tpl-form-input" id="user-name" placeholder="请输入绩效工资">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
                                     </div>
 
                                     <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-3 am-form-label">保密费: <span class="tpl-form-line-small-title">Title</span></label>
-                                        <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入保密费">
+                                        <label for="user-name" class="am-u-sm-2 am-form-label">保密费: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-4">
+                                            <input type="number" class="tpl-form-input" id="user-name" placeholder="请输入保密费">
+                                        <#--<small>请填写标题文字10-20字左右。</small>-->
+                                        </div>
+                                        <label for="user-name" class="am-u-sm-2 am-form-label">提成奖金: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-4">
+                                            <input type="number" class="tpl-form-input" id="f_tcjj" placeholder="请输入提成奖金">
+                                        <#--<small>请填写标题文字10-20字左右。</small>-->
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <label for="user-name" class="am-u-sm-2 am-form-label">报/续班奖金: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-4">
+                                            <input type="number" class="tpl-form-input" id="f_bbj" placeholder="请输入报/续班奖金">
+                                        <#--<small>请填写标题文字10-20字左右。</small>-->
+                                        </div>
+                                        <label for="user-name" class="am-u-sm-2 am-form-label">课时费: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-4">
+                                            <input type="number" class="tpl-form-input" id="f_ksf" placeholder="请输入课时费">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
                                     </div>
 
                                     <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-3 am-form-label">奖金提成: <span class="tpl-form-line-small-title">Title</span></label>
-                                        <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入奖金提成">
+                                        <label for="user-name" class="am-u-sm-2 am-form-label">补发工资: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-4">
+                                            <input type="number" class="tpl-form-input" id="user-name" placeholder="请输入补发工资">
+                                        <#--<small>请填写标题文字10-20字左右。</small>-->
+                                        </div>
+                                        <label for="user-name" class="am-u-sm-2 am-form-label">饭贴: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-4">
+                                            <input type="number" class="tpl-form-input" id="user-name" placeholder="请输入饭贴">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
                                     </div>
 
                                     <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-3 am-form-label">课时费: <span class="tpl-form-line-small-title">Title</span></label>
-                                        <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入课时费">
+                                        <label for="user-name" class="am-u-sm-2 am-form-label">津贴: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-4">
+                                            <input type="number" class="tpl-form-input" id="user-name" placeholder="请输入津贴">
+                                        <#--<small>请填写标题文字10-20字左右。</small>-->
+                                        </div>
+                                        <label for="user-name" class="am-u-sm-2 am-form-label">绩效系数: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-4">
+                                            <input type="number" class="tpl-form-input" id="user-name" placeholder="请输入绩效系数">
+                                        <#--<small>请填写标题文字10-20字左右。</small>-->
+                                        </div>
+                                    </div>
+
+
+                                    <h2 style="text-align:center">应扣项目</h2>
+
+                                    <div class="am-form-group">
+                                        <label for="user-name" class="am-u-sm-2 am-form-label">病事假: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-4">
+                                            <input type="number" class="tpl-form-input" id="user-name" placeholder="请输入津贴">
+                                        <#--<small>请填写标题文字10-20字左右。</small>-->
+                                        </div>
+                                        <label for="user-name" class="am-u-sm-2 am-form-label">迟到/忘打卡扣款: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-4">
+                                            <input type="number" class="tpl-form-input" id="user-name" placeholder="请输入迟到/忘打卡扣款">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
                                     </div>
 
                                     <div class="am-form-group">
-                                    <label for="user-name" class="am-u-sm-3 am-form-label">补发工资: <span class="tpl-form-line-small-title">Title</span></label>
-                                    <div class="am-u-sm-9">
-                                        <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入补发工资">
-                                    <#--<small>请填写标题文字10-20字左右。</small>-->
-                                    </div>
-                                </div>
-                                    <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-3 am-form-label">饭贴: <span class="tpl-form-line-small-title">Title</span></label>
-                                        <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入饭贴">
+                                        <label for="user-name" class="am-u-sm-2 am-form-label">其他扣款: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-4">
+                                            <input type="number" class="tpl-form-input" id="user-name" placeholder="请输入其他扣款">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                    </div>
-                                    <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-3 am-form-label">津贴: <span class="tpl-form-line-small-title">Title</span></label>
-                                        <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入津贴">
+                                        <label for="user-name" class="am-u-sm-2 am-form-label"> </label>
+                                        <div class="am-u-sm-4">
+                                            <#--<input type="text" class="tpl-form-input" id="user-name" placeholder="请输入迟到/忘打卡扣款">-->
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
-                                        </div>
-                                    </div>
-
-                                    <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-3 am-form-label">绩效系数: <span class="tpl-form-line-small-title">Title</span></label>
-                                        <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入绩效系数">
-                                        <#--<small>请填写标题文字10-20字左右。</small>-->
-                                        </div>
-                                    </div>
-
-                                    <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-3 am-form-label">续班奖金: <span class="tpl-form-line-small-title">Title</span></label>
-                                        <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入续班奖金">
-                                        <#--<small>请填写标题文字10-20字左右。</small>-->
-                                        </div>
-                                    </div>
-
-                                    <div class="am-form-group">
-                                        <label for="user-email" class="am-u-sm-3 am-form-label">发布时间 <span class="tpl-form-line-small-title">Time</span></label>
-                                        <div class="am-u-sm-9">
-                                            <input type="text" class="am-form-field tpl-form-no-bg" placeholder="发布时间" data-am-datepicker="" readonly="">
-                                            <small>发布时间为必填</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="am-form-group">
-                                        <label for="user-phone" class="am-u-sm-3 am-form-label">作者 <span class="tpl-form-line-small-title">Author</span></label>
-                                        <div class="am-u-sm-9">
-                                            <select data-am-selected="{searchBox: 1}" style="display: none;">
-                                              <option value="a">-The.CC</option>
-                                              <option value="b">夕风色</option>
-                                              <option value="o">Orange</option>
-                                            </select>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="am-form-group">
-                                        <label class="am-u-sm-3 am-form-label">SEO关键字 <span class="tpl-form-line-small-title">SEO</span></label>
-                                        <div class="am-u-sm-9">
-                                            <input type="text" placeholder="输入SEO关键字">
-                                        </div>
-                                    </div>
-
-                                    <#--<div class="am-form-group">-->
-                                        <#--<label for="user-weibo" class="am-u-sm-3 am-form-label">封面图 <span class="tpl-form-line-small-title">Images</span></label>-->
-                                        <#--<div class="am-u-sm-9">-->
-                                            <#--<div class="am-form-group am-form-file">-->
-                                                <#--<div class="tpl-form-file-img">-->
-                                                    <#--<img src="assets/img/a5.png" alt="">-->
-                                                <#--</div>-->
-                                                <#--<button type="button" class="am-btn am-btn-danger am-btn-sm">-->
-    <#--<i class="am-icon-cloud-upload"></i> 添加封面图片</button>-->
-                                                <#--<input id="doc-form-file" type="file" multiple="">-->
-                                            <#--</div>-->
-
-                                        <#--</div>-->
-                                    <#--</div>-->
-
-                                    <div class="am-form-group">
-                                        <label for="user-weibo" class="am-u-sm-3 am-form-label">添加分类 <span class="tpl-form-line-small-title">Type</span></label>
-                                        <div class="am-u-sm-9">
-                                            <input type="text" id="user-weibo" placeholder="请添加分类用点号隔开">
-                                            <div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="am-form-group">
-                                        <label for="user-intro" class="am-u-sm-3 am-form-label">隐藏文章</label>
-                                        <div class="am-u-sm-9">
-                                            <div class="tpl-switch">
-                                                <input type="checkbox" class="ios-switch bigswitch tpl-switch-btn" checked="">
-                                                <div class="tpl-switch-btn-view">
-                                                    <div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="am-form-group">
-                                        <label for="user-intro" class="am-u-sm-3 am-form-label">文章内容</label>
-                                        <div class="am-u-sm-9">
-                                            <textarea class="" rows="10" id="user-intro" placeholder="请输入文章内容"></textarea>
                                         </div>
                                     </div>
 
@@ -216,10 +171,115 @@
                     </div>
                 </div>
 
-
         </div>
     </div>
     </div>
+
+<#--教师计费方案-->
+<div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt-1" >
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">教师计费方案</div>
+        <div class="am-modal-bd">
+            <form class="am-form" id="teacher_form">
+                <div class="am-form-group">
+                    <label for="doc-ipt-email-1">每月消课人数</label>
+                    <input type="number" class="" id="destroyNum" name="destroyNum" placeholder="每月消课人数" required/>
+                </div>
+                <div class="am-form-group">
+                    <label for="doc-ipt-email-1">报班金额8000以上次数</label>
+                    <input type="number" class="" id="amountUp" name="amountUp" placeholder="备注" />
+                </div>
+                <div class="am-form-group">
+                    <label for="doc-ipt-email-1">报班金额8000以下次数</label>
+                    <input type="number" class="" id="amountDown" name="amountDown" placeholder="备注" />
+                </div>
+            </form>
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+            <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+        </div>
+    </div>
+</div>
+
+<#--课程顾问提成-->
+<div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt-2" >
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">课程顾问提成</div>
+        <div class="am-modal-bd">
+            <form class="am-form" id="role_form">
+                <div class="am-form-group">
+                    <label for="doc-ipt-email-1">本月完成业绩</label>
+                    <input type="number" class="" id="bywcyj" name="bywcyj" placeholder="本月完成业绩" required/>
+                </div>
+                <div class="am-form-group">
+                    <label for="doc-ipt-email-1">业绩达标比例(填写百分比1-100数字)</label>
+                    <input type="number" class="" id="yjdbbl" name="yjdbbl" placeholder="业绩达标比例" required/>
+                </div>
+            </form>
+
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+            <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+        </div>
+    </div>
+</div>
+
+<#--教学主管薪酬方案-->
+<div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt-3" >
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">教学主管薪酬方案</div>
+        <div class="am-modal-bd">
+            <form class="am-form" id="role_form">
+                <div class="am-form-group">
+                    <label for="doc-ipt-email-1">消课奖提成方案(会员人数)</label>
+                    <input type="number" class="" id="hyrs" name="roleName" placeholder="会员人数" required/>
+                </div>
+                <div class="am-form-group">
+                    <label for="doc-ipt-email-1">报班奖8000及以下（不含乐博士课程）</label>
+                    <input type="text" class="" id="bbj_dowm" name="roleRemark" placeholder="次数" />
+                </div>
+
+                <div class="am-form-group">
+                    <label for="doc-ipt-email-1">报班奖8000以上（不含乐博士课程）</label>
+                    <input type="text" class="" id="bbj_up" name="roleRemark" placeholder="次数" />
+                </div>
+            </form>
+
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+            <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+        </div>
+    </div>
+</div>
+
+<#--中心经理提成方案-->
+<div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt-4" >
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">中心经理提成方案</div>
+        <div class="am-modal-bd">
+            <form class="am-form" id="role_form">
+                <div class="am-form-group">
+                    <label for="doc-ipt-email-1">业绩达标比例</label>
+                    <input type="text" class="" id="yjdbbl_jl" name="yjdbbl" placeholder="只能填写60-200之间的数字,为百分比" required/>
+                </div>
+                <div class="am-form-group">
+                    <label for="doc-ipt-email-1">业绩总额,单位/万元</label>
+                    <input type="text" class="" id="yjze" name="yjze" placeholder="超过100达标比例填写,单位: 万元" />
+                </div>
+            </form>
+
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+            <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+        </div>
+    </div>
+</div>
+
+<script src="js/compute.js"></script>
 <#include "include/common.footer.ftl">
 
 </body>

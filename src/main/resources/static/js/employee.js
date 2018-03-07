@@ -78,7 +78,7 @@ function edit(id) {
             $.ajax({
                 type:"POST",
                 url:ctx+'employee/update',
-                data:{"name":$("#name").val(),'center':$('#center').val(),'position':$('#position').val(),'id':$('#id').val()},
+                data:{"name":$("#name").val(),'center':$('#center').val(),'position':$('#position').val(),'id':id},
                 success:function(result){  //function1()
                     if(result.resultCode==1){
                         alert(result.resultMessage);

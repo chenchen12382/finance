@@ -25,7 +25,7 @@ public interface EmployeeDao {
     @Select("select * from t_employee where id=#{id} and is_valid=1")
     Employee selectForId(@Param("id") Integer id);
 
-    @Update("update t_employee set name=#{name},center=#{name},position=#{position},update_date=now() where id=#{id} ")
+    @Update("update t_employee set name=#{name},center=#{center},position=#{position},update_date=now() where id=#{id} ")
     void update(Employee employee);
 
     @Update("update t_employee set is_valid = 0 where id=#{id}")
