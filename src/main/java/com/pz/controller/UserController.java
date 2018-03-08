@@ -42,6 +42,9 @@ public class UserController extends BaseController{
     @Autowired
     private EmployeeService employeeService;
 
+    @Autowired
+    private ComputeService computeService;
+
 
    private static Logger logger = LoggerFactory.getLogger(UserController.class);
 
@@ -146,5 +149,21 @@ public class UserController extends BaseController{
           model.addAttribute("employees",employees);
         return "compute";
     }
+
+
+    @RequestMapping("compute_form")
+    public String computeForm(Model model,BaseQuery query){
+
+        PageList<Compute> computes = computeService.selectForPage(query);
+//        List<Compute> compute = computeService.findAllCompute();
+//        List<Role> roles = roleService.findAllRole();
+//        model.addAttribute("centers",centers);
+//        model.addAttribute("roles",roles);
+        model.addAttribute("computes",computes);
+        model.addAttribute("page",computes.getPaginator());
+
+        return "compute_form";
+    }
+
 
 }

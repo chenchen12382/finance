@@ -211,39 +211,69 @@ $('#compute_btn').click(function () {
 
 
 
+});
 
 
-    $('#my-prompt').modal({
-        relatedTarget: this,
-        onConfirm: function(e) {
 
-            $.ajax({
-                type:"POST",
-                url:ctx+'role/add',
-                data:{"roleName":$("#roleName").val(),'roleRemark':$('#roleRemark').val()},
-                success:function(result){  //function1()
-                    if(result.resultCode==1){
-                        alert("操作成功");
-                        location.reload();
-                    }else {
-                        alert(result.resultMessage);
 
-                    }
-                }
+$('#add_btn').click(function () {
 
-            });
-            resetValue();
-        },
+    var dx = $('#f_dx').val();
+    var gwgz = $('#f_gwgz').val();
+    var jxgz = $('#f_jxgz').val();
+    var bmf = $('#f_bmf').val();
+    var tcjj=$('#f_tcjj').val();
+    var bbj = $('#f_bbj').val();
+    var ksf = $('#f_ksf').val();
+    var bfgz = $('#f_bfgz').val();
+    var ft = $('#f_ft').val();
+    var jt = $('#f_jt').val();
+    var bsj = $('#f_bsj').val();
+    var kk =$('#f_kk').val();
+    var qtkk =$('#f_qtkk').val();
 
-        onCancel: function() {
-            resetValue();
+    var str = $('#select_name').val();
+    var name = str.split(',')[0];
+    var work = str.split(',')[1];
+    var center = str.split(',')[2];
+
+    if(name==undefined || name==''){
+        alert('请选择员工！' )
+        return;
+    }
+
+
+    // var count = dx-0+gwgz-0+jxgz-0+bmf-0+tcjj-0+bbj-0+ksf-0+bfgz-0+ft-0+jt-0-bsj-kk-qtkk;
+    // alert(count);
+
+    var data = {'dx':dx,'gwgz':gwgz,'jxgz':jxgz,'bmf':bmf,'tcjj':tcjj,
+        'bbj':bbj, 'ksf':ksf,'bfgz':bfgz,'ft':ft,'jt':jt,
+           'bsj':bsj,'kk':kk,'qtkk':qtkk,'name':name,'work':work,'center':center};
+
+
+
+    $.ajax({
+        type:"POST",
+        url:ctx+'compute/add',
+        data:data,
+        success:function(result){  //function1()
+            if(result.resultCode==1){
+                alert(result.result);
+                window.location.href=ctx+'compute_form';
+            }else {
+                alert(result.resultMessage);
+            }
         }
-
 
     });
 
-
 });
+
+
+
+
+
+
 
 
 function edit(id) {
@@ -320,7 +350,7 @@ function  remove(id) {
         onConfirm: function(options) {
             $.ajax({
                 type:"POST",
-                url:ctx+'role/delete',
+                url:ctx+'compute/delete',
                 data:{'id':id},
                 async: false,
                 success:function(result){  //function1()

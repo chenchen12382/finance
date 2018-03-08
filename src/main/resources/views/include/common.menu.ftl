@@ -193,6 +193,12 @@
             </a>
         </li>
         <li class="sidebar-nav-link" >
+            <a href="compute_form" >
+                <i class="am-icon-table sidebar-nav-link-logo"></i> 薪酬统计表
+            </a>
+        </li>
+
+        <li class="sidebar-nav-link" >
             <a href="teacher" >
                 <i class="am-icon-table sidebar-nav-link-logo"></i> 教师计费方案
             </a>

@@ -22,7 +22,7 @@
                                     <div class="am-form-group">
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs">
-                                                <button type="button" class="am-btn am-btn-default am-btn-success" id="add_btn"><span class="am-icon-plus"></span> 新增</button>
+                                                <#--<button type="button" class="am-btn am-btn-default am-btn-success" id="add_btn"><span class="am-icon-plus"></span> 新增</button>-->
                                                 <#--<button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 保存</button>-->
                                                 <#--<button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 审核</button>-->
                                                 <#--<button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>-->
@@ -57,27 +57,48 @@
                                         <thead>
                                             <tr>
                                                 <th>id</th>
-                                                <th>员工姓名</th>
+                                                <th>姓名</th>
                                                 <th>中心</th>
-                                                <th>员工职位</th>
-                                                <th>更新时间</th>
+                                                <th>工资总额</th>
+                                                <th>基本工资</th>
+                                                <th>岗位工资</th>
+                                                <th>绩效工资</th>
+                                                <th>保密费</th>
+                                                <th>提成奖金</th>
+                                                <th>报/续班奖金</th>
+                                                <th>课时费</th>
+                                                <th>补发工资</th>
+                                                <th>饭贴</th>
+                                                <th>津贴</th>
+                                                <th>病事假</th>
+                                                <th>迟到/忘打卡扣款</th>
+                                                <th>其他扣款</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <#if employees ?has_content>
-                                            <#list employees as e>
+                                        <#if computes ?has_content>
+                                            <#list computes as c>
                                             <tr class="gradeX" id="">
-                                                <td>${(page.getPage()-1)*10+(e_index+1)}</td>
-                                                <td>${e.name}</td>
-                                                <td>${e.center}</td>
-                                                <td>${e.position}</td>
-                                                <td>${e.updateDate?date}</td>
+                                                <td>${(page.getPage()-1)*10+(c_index+1)}</td>
+                                                <td>${c.name}</td>
+                                                    <td>${c.center}</td>
+                                                <td>${c.gzze}</td>
+                                                <td>${c.dx}</td>
+                                                <td>${c.gwgz}</td>
+                                                <td>${c.jxgz}</td>
+                                                <td>${c.bmf}</td>
+                                                <td>${c.tcjj}</td>
+                                                <td>${c.bbj}</td>
+                                                <td>${c.ksf}</td>
+                                                <td>${c.bfgz}</td>
+                                                <td>${c.ft}</td>
+                                                <td>${c.jt}</td>
+                                                <td>${c.bsj}</td>
+                                                <td>${c.kk}</td>
+                                                <td>${c.qtkk}</td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
-                                                        <a href="javascript:edit(${e.id});" >
-                                                            <i class="am-icon-pencil"></i> 编辑
-                                                        </a>
-                                                        <a href="javascript:remove(${e.id});" class="tpl-table-black-operation-del">
+                                                        <a href="javascript:remove(${c.id});" class="tpl-table-black-operation-del">
                                                             <i class="am-icon-trash"></i> 删除
                                                         </a>
                                                     </div>
@@ -184,6 +205,6 @@
 <#include "include/common.footer.ftl">
 
 </body>
-<script src="js/employee.js"></script>
+<script src="js/compute.js"></script>
 
 </html>

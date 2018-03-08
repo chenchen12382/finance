@@ -98,7 +98,7 @@
                                         <#if p==1>
                                             <li class="am-disabled"><a href="#">上一页</a></li>
                                         <#else >
-                                            <li ><a href="/?page=${p-1}">上一页</a></li>
+                                            <li ><a href="?page=${p-1}">上一页</a></li>
                                         </#if>
 
                                         <#if p?has_content  >

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <#include "include/common.header.ftl">
 
 <body data-type="widgets">
@@ -35,7 +35,7 @@
                             </div>
                             <div class="widget-body am-fr">
 
-                                <form class="am-form tpl-form-line-form">
+                                <form class="am-form tpl-form-line-form" >
 
                                     <div class="am-form-group">
                                         <label for="user-phone" class="am-u-sm-2 am-form-label">姓名: <span class="tpl-form-line-small-title">name</span></label>
@@ -70,12 +70,12 @@
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-2 am-form-label">岗位工资: <span class="tpl-form-line-small-title">Title</span></label>
                                         <div class="am-u-sm-4">
-                                            <input type="number" class="tpl-form-input" id="user-name" placeholder="请输入岗位工资">
+                                            <input type="number" class="tpl-form-input" id="f_gwgz" placeholder="请输入岗位工资">
                                             <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
                                         <label for="user-name" class="am-u-sm-2 am-form-label">绩效工资: <span class="tpl-form-line-small-title">Title</span></label>
                                         <div class="am-u-sm-4">
-                                            <input type="number" class="tpl-form-input" id="user-name" placeholder="请输入绩效工资">
+                                            <input type="number" class="tpl-form-input" id="f_jxgz" placeholder="请输入绩效工资">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
                                     </div>
@@ -83,7 +83,7 @@
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-2 am-form-label">保密费: <span class="tpl-form-line-small-title">Title</span></label>
                                         <div class="am-u-sm-4">
-                                            <input type="number" class="tpl-form-input" id="user-name" placeholder="请输入保密费">
+                                            <input type="number" class="tpl-form-input" id="f_bmf" placeholder="请输入保密费">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
                                         <label for="user-name" class="am-u-sm-2 am-form-label">提成奖金: <span class="tpl-form-line-small-title">Title</span></label>
@@ -108,12 +108,12 @@
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-2 am-form-label">补发工资: <span class="tpl-form-line-small-title">Title</span></label>
                                         <div class="am-u-sm-4">
-                                            <input type="number" class="tpl-form-input" id="user-name" placeholder="请输入补发工资">
+                                            <input type="number" class="tpl-form-input" id="f_bfgz" placeholder="请输入补发工资">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
                                         <label for="user-name" class="am-u-sm-2 am-form-label">饭贴: <span class="tpl-form-line-small-title">Title</span></label>
                                         <div class="am-u-sm-4">
-                                            <input type="number" class="tpl-form-input" id="user-name" placeholder="请输入饭贴">
+                                            <input type="number" class="tpl-form-input" id="f_ft" placeholder="请输入饭贴">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
                                     </div>
@@ -121,12 +121,12 @@
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-2 am-form-label">津贴: <span class="tpl-form-line-small-title">Title</span></label>
                                         <div class="am-u-sm-4">
-                                            <input type="number" class="tpl-form-input" id="user-name" placeholder="请输入津贴">
+                                            <input type="number" class="tpl-form-input" id="f_jt" placeholder="请输入津贴">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                        <label for="user-name" class="am-u-sm-2 am-form-label">绩效系数: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-2 am-form-label"> </label>
                                         <div class="am-u-sm-4">
-                                            <input type="number" class="tpl-form-input" id="user-name" placeholder="请输入绩效系数">
+                                            <#--<input type="number" class="tpl-form-input" id="user-name" placeholder="请输入绩效系数">-->
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
                                     </div>
@@ -137,12 +137,12 @@
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-2 am-form-label">病事假: <span class="tpl-form-line-small-title">Title</span></label>
                                         <div class="am-u-sm-4">
-                                            <input type="number" class="tpl-form-input" id="user-name" placeholder="请输入津贴">
+                                            <input type="number" class="tpl-form-input" id="f_bsj" placeholder="请输入津贴">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
                                         <label for="user-name" class="am-u-sm-2 am-form-label">迟到/忘打卡扣款: <span class="tpl-form-line-small-title">Title</span></label>
                                         <div class="am-u-sm-4">
-                                            <input type="number" class="tpl-form-input" id="user-name" placeholder="请输入迟到/忘打卡扣款">
+                                            <input type="number" class="tpl-form-input" id="f_kk" placeholder="请输入迟到/忘打卡扣款">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
                                     </div>
@@ -150,7 +150,7 @@
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-2 am-form-label">其他扣款: <span class="tpl-form-line-small-title">Title</span></label>
                                         <div class="am-u-sm-4">
-                                            <input type="number" class="tpl-form-input" id="user-name" placeholder="请输入其他扣款">
+                                            <input type="number" class="tpl-form-input" id="f_qtkk" placeholder="请输入其他扣款">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
                                         <label for="user-name" class="am-u-sm-2 am-form-label"> </label>
@@ -159,10 +159,12 @@
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
                                     </div>
-
+                                    <br />
+                                    <hr />
+                                    <br />
                                     <div class="am-form-group">
-                                        <div class="am-u-sm-9 am-u-sm-push-3">
-                                            <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>
+                                        <div class="am-u-sm-6 am-u-sm-push-6">
+                                            <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success " id="add_btn">提交</button>
                                         </div>
                                     </div>
                                 </form>

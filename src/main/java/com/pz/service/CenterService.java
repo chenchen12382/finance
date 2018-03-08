@@ -21,9 +21,6 @@ public class CenterService {
     @Autowired
     private CenterDao centerDao;
 
-
-
-
     /**
      * 查询所有center
      * @param query
