@@ -7,6 +7,7 @@
 <#include "include/common.menu.ftl">
 
     <!-- 内容区域 -->
+<!--
     <div class="tpl-content-wrapper">
 
         <div class="container-fluid am-cf">
@@ -256,7 +257,7 @@
     </div>
 </div>
 </div>
-
+-->
 <#include "include/common.footer.ftl">
 
 </body>

@@ -181,12 +181,14 @@
     </div>
 <#--菜单-->
     <ul class="sidebar-nav">
-        <li class="sidebar-nav-heading">Components <span class="sidebar-nav-heading-info"> 附加组件</span></li>
+    <#--  <li class="sidebar-nav-heading">Components <span class="sidebar-nav-heading-info"> 附加组件</span></li>
         <li class="sidebar-nav-link">
             <a href="main" class="active" >
                 <i class="am-icon-home sidebar-nav-link-logo"></i> 首页
             </a>
         </li>
+
+        -->
         <li class="sidebar-nav-link" >
             <a href="compute" >
                 <i class="am-icon-building-o sidebar-nav-link-logo"></i> 薪酬计算
@@ -218,51 +220,53 @@
                 <i class="am-icon-users sidebar-nav-link-logo"></i> 中心管理
             </a>
         </li>
-        <li class="sidebar-nav-link">
-            <a href="chart.html">
-                <i class="am-icon-bar-chart sidebar-nav-link-logo"></i> 图表
 
-            </a>
-        </li>
+    <#--
+           <li class="sidebar-nav-link">
+               <a href="chart.html">
+                   <i class="am-icon-bar-chart sidebar-nav-link-logo"></i> 图表
 
-        <li class="sidebar-nav-heading">Page<span class="sidebar-nav-heading-info"> 常用页面</span></li>
-        <li class="sidebar-nav-link">
-            <a href="javascript:;" class="sidebar-nav-sub-title">
-                <i class="am-icon-table sidebar-nav-link-logo"></i> 数据列表
-                <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
-            </a>
-            <ul class="sidebar-nav sidebar-nav-sub">
-                <li class="sidebar-nav-link">
-                    <a href="table-list.html">
-                        <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 文字列表
-                    </a>
-                </li>
+               </a>
+           </li>
 
-                <li class="sidebar-nav-link">
-                    <a href="table-list-img.html">
-                        <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 图文列表
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li class="sidebar-nav-link">
-            <a href="sign-up.html">
-                <i class="am-icon-clone sidebar-nav-link-logo"></i> 注册
-                <span class="am-badge am-badge-secondary sidebar-nav-link-logo-ico am-round am-fr am-margin-right-sm">6</span>
-            </a>
-        </li>
-        <li class="sidebar-nav-link">
-            <a href="login.html">
-                <i class="am-icon-key sidebar-nav-link-logo"></i> 登录
-            </a>
-        </li>
-        <li class="sidebar-nav-link">
-            <a href="404.html">
-                <i class="am-icon-tv sidebar-nav-link-logo"></i> 404错误
-            </a>
-        </li>
+           <li class="sidebar-nav-heading">Page<span class="sidebar-nav-heading-info"> 常用页面</span></li>
+           <li class="sidebar-nav-link">
+               <a href="javascript:;" class="sidebar-nav-sub-title">
+                   <i class="am-icon-table sidebar-nav-link-logo"></i> 数据列表
+                   <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
+               </a>
+               <ul class="sidebar-nav sidebar-nav-sub">
+                   <li class="sidebar-nav-link">
+                       <a href="table-list.html">
+                           <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 文字列表
+                       </a>
+                   </li>
 
-    </ul>
-</div>
-<!-- 菜单 -->
+                   <li class="sidebar-nav-link">
+                       <a href="table-list-img.html">
+                           <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 图文列表
+                       </a>
+                   </li>
+               </ul>
+           </li>
+           <li class="sidebar-nav-link">
+               <a href="sign-up.html">
+                   <i class="am-icon-clone sidebar-nav-link-logo"></i> 注册
+                   <span class="am-badge am-badge-secondary sidebar-nav-link-logo-ico am-round am-fr am-margin-right-sm">6</span>
+               </a>
+           </li>
+           <li class="sidebar-nav-link">
+               <a href="login.html">
+                   <i class="am-icon-key sidebar-nav-link-logo"></i> 登录
+               </a>
+           </li>
+           <li class="sidebar-nav-link">
+               <a href="404.html">
+                   <i class="am-icon-tv sidebar-nav-link-logo"></i> 404错误
+               </a>
+           </li>
+-->
+       </ul>
+   </div>
+   <!-- 菜单 -->
 </div>

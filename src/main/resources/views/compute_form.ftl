@@ -81,7 +81,7 @@
                                             <tr class="gradeX" id="">
                                                 <td>${(page.getPage()-1)*10+(c_index+1)}</td>
                                                 <td>${c.name}</td>
-                                                    <td>${c.center}</td>
+                                                <td>${c.center}</td>
                                                 <td>${c.gzze}</td>
                                                 <td>${c.dx}</td>
                                                 <td>${c.gwgz}</td>
