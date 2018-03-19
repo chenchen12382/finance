@@ -34,5 +34,4 @@ public class UserLoginIdentity implements Serializable {
     public void setUserIdString(String userIdString) {
         this.userIdString = userIdString;
     }
-
 }

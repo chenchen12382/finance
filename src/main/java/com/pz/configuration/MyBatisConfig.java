@@ -47,10 +47,10 @@ public class MyBatisConfig implements TransactionManagementConfigurer {
         return sqlSessionFactoryBean;
     }
 
-    @Bean
-    public SqlSessionTemplate initTemplate(SqlSessionFactory factory) {
-        return new SqlSessionTemplate(factory);
-    }
+//    @Bean
+//    public SqlSessionTemplate initTemplate(SqlSessionFactory factory) {
+//        return new SqlSessionTemplate(factory);
+//    }
 
     /**
      * 事物管理
