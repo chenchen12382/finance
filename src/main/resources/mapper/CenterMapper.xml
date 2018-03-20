@@ -4,8 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pz.dao.CenterDao">
 
-    <select id="selectForPage" resultType="Center" >
-      select id,center,district,create_date,is_valid,update_date from t_center where is_valid=1
+    <select id="selectForPage" resultType="com.pz.model.Center" >
+      select * from t_center where is_valid=1
     </select>
 
 

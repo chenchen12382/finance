@@ -4,7 +4,7 @@
 <mapper namespace="com.pz.dao.UserDao" >
 
 
-	<select id="findById" resultType="User" >
+	<select id="findById" resultType="com.pz.model.User" >
 		SELECT
 			*
 		FROM
