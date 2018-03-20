@@ -18,32 +18,20 @@
                             </div>
                             <div class="widget-body  am-fr">
 
-                                <#--<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">-->
-                                    <#--<div class="am-form-group">-->
-                                        <#--<div class="am-btn-toolbar">-->
-                                            <#--<div class="am-btn-group am-btn-group-xs">-->
-                                                <#--&lt;#&ndash;<button type="button" class="am-btn am-btn-default am-btn-success" id="add_btn"><span class="am-icon-plus"></span> 新增</button>&ndash;&gt;-->
-                                                <#--&lt;#&ndash;<button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 保存</button>&ndash;&gt;-->
-                                                <#--&lt;#&ndash;<button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 审核</button>&ndash;&gt;-->
-                                                <#--&lt;#&ndash;<button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>&ndash;&gt;-->
-                                            <#--</div>-->
-                                        <#--</div>-->
-                                    <#--</div>-->
-                                <#--</div>-->
                                 <div class="am-u-sm-12 am-u-md-6 am-u-lg-2">
                                     <div class="am-form-group">
-                                        <input type="text" id="doc-vld-name" minlength="3" placeholder="输入用户名" class="am-form-field" required/>
+                                        <input type="text" id="s_name" minlength="3" placeholder="姓名" class="am-form-field" required/>
                                     </div>
                                 </div>
                                 <div class="am-u-sm-12 am-u-md-6 am-u-lg-2">
                                     <div class="am-form-group">
-                                        <input type="text" id="doc-vld-name" minlength="3" placeholder="输入用户名" class="am-form-field" required/>
+                                        <input type="text" id="s_center" minlength="3" placeholder="中心" class="am-form-field" required/>
                                     </div>
                                 </div>
 
                                 <div class="am-u-sm-12 am-u-md-6 am-u-lg-2">
                                     <div class="am-form-group">
-                                        <input type="text" id="doc-vld-name" minlength="3" placeholder="输入用户名" class="am-form-field" required/>
+                                        <input type="text" id="s_start" minlength="3" placeholder="开始时间" class="am-form-field" data-am-datepicker required/>
                                     </div>
                                 </div>
 
@@ -53,10 +41,10 @@
                                 <div class="am-u-sm-12 am-u-md-12 am-u-lg-2">
                                     <div class="am-input-group am-input-group-sm ">
                                         <#--<input type="text" class="am-form-field ">-->
-                                            <input type="text" id="doc-vld-name" minlength="3" placeholder="输入用户名" class="am-form-field" required/>
+                                            <input type="text" id="s_over" minlength="3" placeholder="结束时间" class="am-form-field" data-am-datepicker required/>
                                         <#--<input type="text" class="am-form-field ">-->
                                         <span class="am-input-group-btn">
-                                            <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button"></button>
+                                            <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button"  id="s_btn"></button>
                                           </span>
                                     </div>
                                 </div>
@@ -214,6 +202,6 @@
 <#include "include/common.footer.ftl">
 
 </body>
-<script src="js/compute.js"></script>
+<script src="js/compute.form.js"></script>
 
 </html>

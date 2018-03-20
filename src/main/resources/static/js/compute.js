@@ -1,3 +1,54 @@
+$(function() {
+    $('#doc-form-file').on('change', function() {
+        var fileNames = '';
+        $.each(this.files, function() {
+            fileNames += '<span class="am-badge">' + this.name + '</span> ';
+        });
+        $('#file-list').html(fileNames);
+    });
+});
+
+$('#import_btn').click(function(){
+
+
+    $('#my-prompt-import').modal({
+        relatedTarget: this,
+        onConfirm: function(e) {
+
+            $("#import_form").ajaxSubmit({
+                type: "POST",
+                url:ctx+"compute/readExcel",
+                dataType: "json",
+                // data:data,
+                success: function(result){
+                    // result = JSON.parse(result);
+                    if(result.resultCode == 1) {
+
+                        alert('上传成功！');
+                    }else{
+                        alert(result.resultMessage);
+                        return;
+                    }
+                }
+            });
+
+
+
+        },
+
+        onCancel: function() {
+            $('#file-list').html('');
+        }
+
+
+    });
+
+
+
+
+});
+
+
 $('#compute_btn').click(function () {
 
     var str = $('#select_name').val();

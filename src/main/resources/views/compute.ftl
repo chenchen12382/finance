@@ -49,6 +49,7 @@
                                             </#if>
                                             </select>
                                                &nbsp;&nbsp;&nbsp;&nbsp; <button type="button" id="compute_btn" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提成计算</button>
+                                            &nbsp;&nbsp;&nbsp;&nbsp; <button type="button" id="import_btn" class="am-btn am-btn-warning tpl-btn-bg-color-success ">批量上传</button>
                                         </div>
                                     </div>
                                     <h2 style="text-align:center">应发项目</h2>
@@ -270,6 +271,31 @@
                 <div class="am-form-group">
                     <label for="doc-ipt-email-1">业绩总额,单位/万元</label>
                     <input type="text" class="" id="yjze" name="yjze" placeholder="超过100达标比例填写,单位: 万元" />
+                </div>
+            </form>
+
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+            <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+        </div>
+    </div>
+</div>
+
+
+<#--中心经理提成方案-->
+<div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt-import" >
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">批量上传</div>
+        <div class="am-modal-bd">
+            <form class="am-form" id="import_form">
+                <div class="am-form-group">
+                    <div class="am-form-group am-form-file">
+                        <button type="button" class="am-btn am-btn-danger am-btn-sm">
+                            <i class="am-icon-cloud-upload"></i> 选择要上传的文件</button>
+                        <input id="doc-form-file" name="upExl" type="file" multiple>
+                    </div>
+                    <div id="file-list"></div>
                 </div>
             </form>
 

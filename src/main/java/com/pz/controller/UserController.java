@@ -3,6 +3,7 @@ import com.github.miemiedev.mybatis.paginator.domain.PageList;
 import com.pz.base.BaseController;
 import com.pz.base.BaseQuery;
 import com.pz.base.ResultInfo;
+import com.pz.dto.ComputeFormQuery;
 import com.pz.model.*;
 import com.pz.service.*;
 import com.pz.vo.UserLoginIdentity;
@@ -152,13 +153,9 @@ public class UserController extends BaseController{
 
 
     @RequestMapping("compute_form")
-    public String computeForm(Model model,BaseQuery query){
+    public String computeForm(Model model,ComputeFormQuery query){
 
         PageList<Compute> computes = computeService.selectForPage(query);
-//        List<Compute> compute = computeService.findAllCompute();
-//        List<Role> roles = roleService.findAllRole();
-//        model.addAttribute("centers",centers);
-//        model.addAttribute("roles",roles);
         model.addAttribute("computes",computes);
         model.addAttribute("page",computes.getPaginator());
 

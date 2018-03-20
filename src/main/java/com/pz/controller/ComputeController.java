@@ -7,7 +7,9 @@ import com.pz.service.ComputeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * Created by Administrator on 2018/3/8.
@@ -38,6 +40,15 @@ public class ComputeController extends BaseController {
 
         return success("删除成功!");
 
+    }
+
+
+
+    @RequestMapping("readExcel")
+    @ResponseBody
+    public ResultInfo readExcel(@RequestParam(value = "upExl", required = false) MultipartFile upExl){
+        computeService.readExcel(upExl);
+        return success("导入成功");
     }
 
 }

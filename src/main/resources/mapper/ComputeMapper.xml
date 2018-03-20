@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pz.dao.ComputeDao">
+
+    <select id="selectForPage" resultType="Compute" >
+      select * from t_compute
+        <where>
+            is_valid=1
+        <if test="name!=null and name!=''">
+            and name LIKE '%${name}%'
+        </if>
+
+        <if test="center!=null and center!=''">
+            and center LIKE '%${center}%'
+        </if>
+
+
+            and create_date BETWEEN #{start} AND #{over}
+
+
+    </where>
+
+      ORDER BY create_date DESC
+    </select>
+
+
+
+
+</mapper>

@@ -3,6 +3,7 @@ package com.pz.dao;
 import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
 import com.github.miemiedev.mybatis.paginator.domain.PageList;
 import com.pz.base.BaseQuery;
+import com.pz.dto.ComputeFormQuery;
 import com.pz.model.Compute;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
@@ -19,8 +20,7 @@ public interface ComputeDao {
     void insert(Compute compute);
 
 
-    @Select("select * from t_compute where is_valid=1 ORDER BY create_date DESC ")
-    PageList<Compute> selectForPage(BaseQuery query, PageBounds pageBounds);
+    PageList<Compute> selectForPage(ComputeFormQuery query, PageBounds pageBounds);
 
 
     @Update("update t_compute set is_valid=0 where id=#{id}")

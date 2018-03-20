@@ -4,9 +4,15 @@ import com.github.miemiedev.mybatis.paginator.domain.PageList;
 import com.pz.base.AssertUtil;
 import com.pz.base.BaseQuery;
 import com.pz.dao.ComputeDao;
+import com.pz.dto.ComputeFormQuery;
+import com.pz.exception.ParamException;
 import com.pz.model.Compute;
+import com.pz.utils.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.Date;
 
 /**
  * Created by Administrator on 2018/3/8.
@@ -99,7 +105,26 @@ public class ComputeService {
 
     }
 
-    public PageList<Compute> selectForPage(BaseQuery query) {
+    public PageList<Compute> selectForPage(ComputeFormQuery query) {
+
+        Date start = query.getStart();
+        Date over = query.getOver();
+        if(start==null && over==null ){
+            start= DateUtil.getFisrtDayOfNow();
+            over = DateUtil.getLastDayOfDate(new Date());
+
+        }
+
+        if(start!=null && over==null){
+            over=DateUtil.getLastDayOfDate(new Date());
+        }
+
+        if(start==null && over!=null){
+            throw new ParamException("请输入开始时间");
+        }
+
+        query.setStart(start);
+        query.setOver(over);
 
         PageList<Compute> computes = computeDao.selectForPage(query,query.buildPageBounds());
 
@@ -111,6 +136,17 @@ public class ComputeService {
     public void delete(Integer id) {
 
         computeDao.delete(id);
+
+    }
+
+    /**
+     * 批量导入excel
+     * @param upExl
+     */
+    public void readExcel(MultipartFile upExl) {
+
+
+
 
     }
 }

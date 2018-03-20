@@ -5,6 +5,8 @@ $('#add_btn').click(function () {
         relatedTarget: this,
         onConfirm: function(e) {
 
+
+
             $.ajax({
                 type:"POST",
                 url:ctx+'center/add',
