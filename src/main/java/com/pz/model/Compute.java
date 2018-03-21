@@ -1,11 +1,38 @@
 package com.pz.model;
 
 import com.pz.base.BaseModel;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 
 /**
  * Created by Administrator on 2018/3/8.
  */
 public class Compute extends BaseModel{
+
+    private Integer sfz;    //省份证号
+    private Integer cqts;   //出勤天数
+    private Integer yeybt;  //幼儿园补贴
+    private Integer ccbt;   //出差补贴
+    private Double jxxs;   //绩效系数
+    private Double cjkk;   //产假扣款
+    private Double sjkk;   //事假扣款
+    private Double bjkk;   //病假扣款
+    private Double kgkk;   //旷工扣款
+    private Double cdkk;   //迟到扣款
+    private Double yfgz;   //应发工资
+
+
+    private Double grsbhj;  //个人社保合计
+    private Double grgjj;  //个人公积金
+    private Double grsds;  //个人所得税
+    private Double qysbhj; //企业社保合计
+    private Double qygjj;  //企业公积金
+
+
+    private Integer gzbc;  //工资补差
+
+
 
     private Integer dx;     //底薪 基本工资
     private Integer gwgz;   //岗位工资
@@ -29,6 +56,165 @@ public class Compute extends BaseModel{
 
     private  String center;   //中心
 
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    private Date start;
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    private Date over;
+
+
+    public Integer getGzbc() {
+        return gzbc;
+    }
+
+    public void setGzbc(Integer gzbc) {
+        this.gzbc = gzbc;
+    }
+
+    public Double getGrsbhj() {
+        return grsbhj;
+    }
+
+    public void setGrsbhj(Double grsbhj) {
+        this.grsbhj = grsbhj;
+    }
+
+    public Double getGrgjj() {
+        return grgjj;
+    }
+
+    public void setGrgjj(Double grgjj) {
+        this.grgjj = grgjj;
+    }
+
+    public Double getGrsds() {
+        return grsds;
+    }
+
+    public void setGrsds(Double grsds) {
+        this.grsds = grsds;
+    }
+
+    public Double getQysbhj() {
+        return qysbhj;
+    }
+
+    public void setQysbhj(Double qysbhj) {
+        this.qysbhj = qysbhj;
+    }
+
+    public Double getQygjj() {
+        return qygjj;
+    }
+
+    public void setQygjj(Double qygjj) {
+        this.qygjj = qygjj;
+    }
+
+    public Double getYfgz() {
+        return yfgz;
+    }
+
+    public void setYfgz(Double yfgz) {
+        this.yfgz = yfgz;
+    }
+
+    public Double getJxxs() {
+        return jxxs;
+    }
+
+    public void setJxxs(Double jxxs) {
+        this.jxxs = jxxs;
+    }
+
+    public Integer getCcbt() {
+        return ccbt;
+    }
+
+    public void setCcbt(Integer ccbt) {
+        this.ccbt = ccbt;
+    }
+
+    public Integer getYeybt() {
+        return yeybt;
+    }
+
+    public void setYeybt(Integer yeybt) {
+        this.yeybt = yeybt;
+    }
+
+    public Integer getSfz() {
+        return sfz;
+    }
+
+    public void setSfz(Integer sfz) {
+        this.sfz = sfz;
+    }
+
+    public Integer getCqts() {
+        return cqts;
+    }
+
+    public void setCqts(Integer cqts) {
+        this.cqts = cqts;
+    }
+
+
+    public Double getCjkk() {
+        return cjkk;
+    }
+
+    public void setCjkk(Double cjkk) {
+        this.cjkk = cjkk;
+    }
+
+    public Double getSjkk() {
+        return sjkk;
+    }
+
+    public void setSjkk(Double sjkk) {
+        this.sjkk = sjkk;
+    }
+
+    public Double getBjkk() {
+        return bjkk;
+    }
+
+    public void setBjkk(Double bjkk) {
+        this.bjkk = bjkk;
+    }
+
+    public Double getKgkk() {
+        return kgkk;
+    }
+
+    public void setKgkk(Double kgkk) {
+        this.kgkk = kgkk;
+    }
+
+    public Double getCdkk() {
+        return cdkk;
+    }
+
+    public void setCdkk(Double cdkk) {
+        this.cdkk = cdkk;
+    }
+
+
+    public Date getStart() {
+        return start;
+    }
+
+    public void setStart(Date start) {
+        this.start = start;
+    }
+
+    public Date getOver() {
+        return over;
+    }
+
+    public void setOver(Date over) {
+        this.over = over;
+    }
 
     public String getName() {
         return name;

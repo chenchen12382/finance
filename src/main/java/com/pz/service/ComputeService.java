@@ -8,11 +8,19 @@ import com.pz.dto.ComputeFormQuery;
 import com.pz.exception.ParamException;
 import com.pz.model.Compute;
 import com.pz.utils.DateUtil;
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  * Created by Administrator on 2018/3/8.
@@ -22,6 +30,7 @@ public class ComputeService {
 
     @Autowired
     private ComputeDao computeDao;
+
 
 
     public void insert(Compute compute) {
@@ -146,6 +155,227 @@ public class ComputeService {
     public void readExcel(MultipartFile upExl) {
 
 
+        Date start = DateUtil.getFisrtDayOfNow();
+        Date over = DateUtil.getLastDayOfDate(new Date());
+        Compute compute=new Compute();
+        HSSFWorkbook workbook = null;
+        List<Compute> computes = new ArrayList<>();
+//        Integer centerId = protocolNum.getCenterId();
+        try {
+
+            if (upExl != null) {
+                workbook = new HSSFWorkbook(upExl.getInputStream());
+//            workbook = new HSSFWorkbook(new FileInputStream(new File("E:/2.xls")));
+                HSSFSheet sheet = workbook.getSheetAt(0);
+//            List<ProtocolNum> xybh = new ArrayList<>();
+
+//            for (int i = 0; i < workbook.getNumberOfSheets(); i++) {// 获取每个Sheet表
+//                sheet = workbook.getSheetAt(i);
+                for (int i = 1; i < sheet.getLastRowNum() + 1; i++) {// getLastRowNum，获取最后一行的行标
+                    HSSFRow row = sheet.getRow(i);
+                    compute = new Compute();
+                    if (row != null) {
+                        for (int j = 0; j < row.getLastCellNum(); j++) {// getLastCellNum，是获取最后一个不为空的列是第几个
+                            if (row.getCell(j) != null) { // getCell 获取单元格数据
+//                                System.out.print(row.getCell(k) + "\t");
+
+                                HSSFCell excelRead = row.getCell(j);
+                                excelRead.setCellType(HSSFCell.CELL_TYPE_STRING);
+                                String cellValue = excelRead.getStringCellValue();
+//                                if(cellValue.length()!=13){
+//                                    throw new ParamException("协议编号"+cellValue +" 不是13位  请检查");
+//                                }
+//                                Pattern pattern = Pattern.compile("PZ[0-9]{11}");
+//                                if(!pattern.matcher(cellValue).matches()){
+//                                    throw new ParamException("只能以大写PZ开头并包含11位数字,不能包含其它符号");
+//                                }
+                                //中心名称
+                                if(j==0){
+                                    compute.setCenter(cellValue);
+                                }
+                                // 	中文名
+                                if(j==1){
+                                    compute.setName(cellValue);
+                                }
+                                // 身份证号码
+                                if(j==2){
+                                    compute.setSfz(Integer.valueOf(cellValue));
+                                }
+                                // 	职位
+                                if(j==3){
+                                    compute.setWork(cellValue);
+                                }
+                                // 基本工资
+                                if(j==4){
+                                    compute.setDx(Integer.valueOf(cellValue));
+                                }
+                                // 岗位工资
+                                if(j==5){
+                                    compute.setGwgz(Integer.valueOf(cellValue));
+                                }
+
+                                // 绩效工资
+                                if(j==6){
+                                    compute.setJxgz(Integer.valueOf(cellValue));
+                                }
+                                // 保密费	工资补差（业绩底薪考核）
+                                if(j==7){
+                                    compute.setBmf(Integer.valueOf(cellValue));
+                                }
+
+//                                工资补差（业绩底薪考核）
+                                if(j==8){
+                                    compute.setGzbc(Integer.valueOf(cellValue));
+                                }
+
+                                // 出勤天数
+                                if(j==9){
+                                    compute.setCqts(Integer.valueOf(cellValue));
+                                }
+
+                                // 工资调整补差（应补应扣）
+                                if(j==10){
+                                    compute.setBfgz(Integer.valueOf(cellValue));
+                                }
+                                // 	饭贴
+                                if(j==11){
+                                    compute.setFt(Integer.valueOf(cellValue));
+                                }
+                                // 	津贴
+                                if(j==12){
+                                    compute.setJt(Integer.valueOf(cellValue));
+                                }
+                                // 	幼儿园补贴
+                                if(j==13){
+                                    compute.setYeybt(Integer.valueOf(cellValue));
+                                }
+
+                                // 	提成奖金
+                                if(j==14){
+                                    compute.setTcjj(Integer.valueOf(cellValue));
+                                }
+
+                                // 	课时费
+                                if(j==15){
+                                    compute.setKsf(Integer.valueOf(cellValue));
+                                }
+
+                                // 出差补贴
+                                if(j==16){
+                                    compute.setCcbt(Integer.valueOf(cellValue));
+                                }
+
+
+                                // 绩效系数
+                                if(j==17){
+                                    compute.setJxxs(Double.valueOf(cellValue));
+                                }
+                                // 产假扣款
+
+                                if(j==18){
+
+                                    compute.setCjkk(Double.valueOf(cellValue));
+                                }
+
+                                // 事假扣款
+
+                                if(j==19){
+                                    compute.setSjkk(Double.valueOf(cellValue));
+
+                                }
+                                // 病假扣款
+                                if(j==20){
+
+                                    compute.setBjkk(Double.valueOf(cellValue));
+                                }
+
+                                // 旷工扣款
+                                if(j==21){
+
+                                    compute.setKgkk(Double.valueOf(cellValue));
+                                }
+
+                                // 迟到扣款
+                                if(j==22){
+
+                                    compute.setCdkk(Double.valueOf(cellValue));
+
+                                }
+
+
+                                // 其他扣款
+                                if(j==23){
+
+                                    compute.setQtkk(Integer.valueOf(cellValue));
+                                }
+
+                                // 应发工资
+                                if(j==24){
+                                    compute.setYfgz(Double.valueOf(cellValue));
+                                }
+
+
+                                // 个人社保合计
+                                if(j==25){
+                                    compute.setGrsbhj(Double.valueOf(cellValue));
+                                }
+
+
+                                // 	个人公积金
+                                if(j==26){
+                                    compute.setGrgjj(Double.valueOf(cellValue));
+                                }
+
+
+                                // 个人所得税
+
+                                if(j==27){
+
+                                    compute.setGrsds(Double.valueOf(cellValue));
+
+                                }
+                                // 	企业社保合计
+                                if(j==28){
+
+                                    compute.setQysbhj(Double.valueOf(cellValue));
+                                }
+
+                                // 	企业公积金
+                                if(j==29){
+                                    compute.setQygjj(Double.valueOf(cellValue));
+
+                                }
+
+                                // 实发工资
+                                if(j==30){
+                                    compute.setGzze(Double.valueOf(cellValue));
+                                }
+
+                            }
+                        }
+
+                        //查询是否重复
+                        Integer sfz = compute.getSfz();
+                        Integer count=computeDao.findBySfz(sfz,start,over);
+
+                        if(count>0){
+                            compute.setStart(start);
+                            compute.setOver(over);
+                            computeDao.update(compute);
+                        }else {
+                            computeDao.insert(compute);
+                        }
+
+                    }
+                }
+            }else{
+                throw  new ParamException("参数错误，请联系管理员！");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new ParamException("文件有误,只能上传xls格式的excel文件!");
+
+        }
 
 
     }

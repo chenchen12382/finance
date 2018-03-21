@@ -77,22 +77,22 @@
                                             <#list computes as c>
                                             <tr class="gradeX" id="">
                                                 <td>${(page.getPage()-1)*10+(c_index+1)}</td>
-                                                <td>${c.name}</td>
-                                                <td>${c.center}</td>
-                                                <td>${c.gzze}</td>
-                                                <td>${c.dx}</td>
-                                                <td>${c.gwgz}</td>
-                                                <td>${c.jxgz}</td>
-                                                <td>${c.bmf}</td>
-                                                <td>${c.tcjj}</td>
-                                                <td>${c.bbj}</td>
-                                                <td>${c.ksf}</td>
-                                                <td>${c.bfgz}</td>
-                                                <td>${c.ft}</td>
-                                                <td>${c.jt}</td>
-                                                <td>${c.bsj}</td>
-                                                <td>${c.kk}</td>
-                                                <td>${c.qtkk}</td>
+                                                <td>${c.name!""}</td>
+                                                <td>${c.center!""}</td>
+                                                <td>${c.gzze!0}</td>
+                                                <td>${c.dx!0}</td>
+                                                <td>${c.gwgz!0}</td>
+                                                <td>${c.jxgz!0}</td>
+                                                <td>${c.bmf!0}</td>
+                                                <td>${c.tcjj!0}</td>
+                                                <td>${c.bbj!0}</td>
+                                                <td>${c.ksf!0}</td>
+                                                <td>${c.bfgz!0}</td>
+                                                <td>${c.ft!0}</td>
+                                                <td>${c.jt!0}</td>
+                                                <td>${c.bsj!0}</td>
+                                                <td>${c.kk!0}</td>
+                                                <td>${c.qtkk!0}</td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
                                                         <a href="javascript:remove(${c.id});" class="tpl-table-black-operation-del">
