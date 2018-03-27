@@ -20,18 +20,18 @@
 
                                 <div class="am-u-sm-12 am-u-md-6 am-u-lg-2">
                                     <div class="am-form-group">
-                                        <input type="text" id="s_name" minlength="3" placeholder="姓名" class="am-form-field" required/>
+                                        <input type="text" id="s_name" minlength="3" placeholder="姓名" class="am-form-field" value="${query.name!''}"/>
                                     </div>
                                 </div>
                                 <div class="am-u-sm-12 am-u-md-6 am-u-lg-2">
                                     <div class="am-form-group">
-                                        <input type="text" id="s_center" minlength="3" placeholder="中心" class="am-form-field" required/>
+                                        <input type="text" id="s_center" minlength="3" placeholder="中心" class="am-form-field" value="${query.center?default('')}" />
                                     </div>
                                 </div>
 
                                 <div class="am-u-sm-12 am-u-md-6 am-u-lg-2">
                                     <div class="am-form-group">
-                                        <input type="text" id="s_start" minlength="3" placeholder="开始时间" class="am-form-field" data-am-datepicker required/>
+                                        <input type="text" id="s_start" minlength="3" placeholder="开始时间" class="am-form-field" value="${query.start?string("yyyy-MM-dd")}" data-am-datepicker />
                                     </div>
                                 </div>
 
@@ -41,7 +41,7 @@
                                 <div class="am-u-sm-12 am-u-md-12 am-u-lg-2">
                                     <div class="am-input-group am-input-group-sm ">
                                         <#--<input type="text" class="am-form-field ">-->
-                                            <input type="text" id="s_over" minlength="3" placeholder="结束时间" class="am-form-field" data-am-datepicker required/>
+                                            <input type="text" id="s_over" minlength="3" placeholder="结束时间" class="am-form-field" value="${query.over?string("yyyy-MM-dd")}" data-am-datepicker required/>
                                         <#--<input type="text" class="am-form-field ">-->
                                         <span class="am-input-group-btn">
                                             <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button"  id="s_btn"></button>
@@ -50,7 +50,7 @@
                                 </div>
 
                                 <div class=" am-scrollable-horizontal am-text-nowrap">
-                                    <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black  " id="example-r">
+                                    <table width="100%" class="am-table am-table-striped am-table-bordered am-table-compact" id="example-r">
                                         <thead>
                                             <tr>
                                                 <th>id</th>
@@ -151,24 +151,24 @@
 
                                         <#if p?has_content  >
                                             <#if p - 2 &gt;= 1>
-                                                <li class=><a href="?page=${page.getPage()-2}">${page.getPage()-2}</a></li>
+                                                <li class=><a href="?page=${page.getPage()-2}&name=${query.name!''}&center=${query.center!''}&start=${query.start?string("yyyy-MM-dd")}&over=${query.over?string("yyyy-MM-dd")}">${page.getPage()-2}</a></li>
                                             </#if>
                                             <#if page.hasPrePage>
-                                                <li class=><a href="?page=${page.getPage()-1}">${page.getPage()-1}</a></li>
+                                                <li class=><a href="?page=${page.getPage()-1}&name=${query.name!''}&center=${query.center!''}&start=${query.start?string("yyyy-MM-dd")}&over=${query.over?string("yyyy-MM-dd")}">${page.getPage()-1}</a></li>
                                             </#if>
-                                            <li class="am-active"><a href="?page=${page.getPage()}">${page.getPage()}</a></li>
+                                            <li class="am-active"><a href="?page=${page.getPage()}&name=${query.name!''}&center=${query.center!''}&start=${query.start?string("yyyy-MM-dd")}&over=${query.over?string("yyyy-MM-dd")}">${page.getPage()}</a></li>
                                             <#if page.hasNextPage>
-                                                <li ><a href="?page=${page.getPage()+1}">${page.getPage()+1}</a></li>
+                                                <li ><a href="?page=${page.getPage()+1}&name=${query.name!''}&center=${query.center!''}&start=${query.start?string("yyyy-MM-dd")}&over=${query.over?string("yyyy-MM-dd")}">${page.getPage()+1}</a></li>
                                             </#if>
                                             <#if p + 2 <= total>
-                                                <li ><a href="?page=${page.getPage()+2}">${page.getPage()+2}</a></li>
+                                                <li ><a href="?page=${page.getPage()+2}&name=${query.name!''}&center=${query.center!''}&start=${query.start?string("yyyy-MM-dd")}&over=${query.over?string("yyyy-MM-dd")}">${page.getPage()+2}</a></li>
                                             </#if>
                                         </#if>
 
                                         <#if page.getPage()==page.getTotalPages()>
                                             <li class="am-disabled"><a href="#">下一页</a></li>
                                         <#else >
-                                            <li><a href="?page=${page.getPage()+1}">下一页</a></li>
+                                            <li><a href="?page=${page.getPage()+1}&name=${query.name!''}&center=${query.center!''}&start=${query.start?string("yyyy-MM-dd")}&over=${query.over?string("yyyy-MM-dd")}">下一页</a></li>
                                         </#if>
                                         </ul>
 
@@ -230,7 +230,6 @@
 </div>
 
 <#include "include/common.footer.ftl">
-
 </body>
 <script src="js/compute.form.js"></script>
 

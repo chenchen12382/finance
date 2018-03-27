@@ -159,8 +159,12 @@ public class UserController extends BaseController{
         model.addAttribute("computes",computes);
         model.addAttribute("page",computes.getPaginator());
 
+        model.addAttribute("query",query);
+
+
         return "compute_form";
     }
+
 
 
 }

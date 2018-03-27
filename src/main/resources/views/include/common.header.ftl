@@ -12,11 +12,17 @@
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
     <script src="assets/js/echarts.min.js"></script>
     <link rel="stylesheet" href="assets/css/amazeui.min.css" />
-    <link rel="stylesheet" href="assets/css/amazeui.datatables.min.css" />
+    <#--<link rel="stylesheet" href="assets/css/amazeui.datatables.min.css" />-->
     <link rel="stylesheet" href="assets/css/app.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.form.js"></script>
     <script src="assets/js/theme.js"></script>
+    <!--引入css-->
+
+    <!--引入JavaScript-->
+    <#--<script src="js/amazeui.datatables.min.js"></script>-->
+    <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 
 </head>
 
