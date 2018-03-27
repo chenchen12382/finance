@@ -18,10 +18,10 @@ import java.util.List;
 public interface ComputeDao {
 
     @Insert("insert into t_compute (sfz,cqts,yeybt,ccbt,jxxs,cjkk,sjkk,bjkk,kgkk,cdkk,yfgz,grsbhj,grgjj,grsds,qysbhj,qygjj," +
-            " dx,gwgz,jxgz,bmf,tcjj,bbj,ksf,bfgz,ft,jt,bsj,kk,qtkk,gzze,name,work,center,is_valid,create_date,update_date,gzbc ) values " +
+            " dx,gwgz,jxgz,bmf,tcjj,bbj,ksf,bfgz,ft,jt,bsj,kk,qtkk,gzze,name,work,center,yjtc,xkrs,is_valid,create_date,update_date,gzbc ) values " +
             " (#{sfz},#{cqts},#{yeybt},#{ccbt},#{jxxs},#{cjkk},#{sjkk},#{bjkk},#{kgkk},#{cdkk},#{yfgz},#{grsbhj},#{grgjj},#{grsds}," +
             " #{qysbhj},#{qygjj},#{dx},#{gwgz},#{jxgz},#{bmf},#{tcjj}," +
-            "#{bbj},#{ksf},#{bfgz},#{ft},#{jt},#{bsj},#{kk},#{qtkk},#{gzze},#{name},#{work},#{center},1,now(),now(),#{gzbc})")
+            "#{bbj},#{ksf},#{bfgz},#{ft},#{jt},#{bsj},#{kk},#{qtkk},#{gzze},#{name},#{work},#{center},#{yjtc},#{xkrs},1,now(),now(),#{gzbc})")
     void insert(Compute compute);
 
 
@@ -40,6 +40,6 @@ public interface ComputeDao {
     @Update("update t_compute set sfz=#{sfz},cqts=#{cqts},yeybt=#{yeybt},ccbt=#{ccbt},jxxs=#{jxxs},cjkk=#{cjkk},sjkk=#{sjkk},bjkk=#{bjkk},kgkk=#{kgkk},cdkk=#{cdkk},yfgz=#{yfgz}, " +
             " grsbhj=#{grsbhj},grgjj=#{grgjj},grsds=#{grsds},qysbhj=#{qysbhj},qygjj=#{qygjj}, " +
             " dx=#{dx},gwgz=#{gwgz},jxgz=#{jxgz},bmf=#{bmf},tcjj=#{tcjj},bbj=#{bbj},ksf=#{ksf},bfgz=#{bfgz},ft=#{ft},jt=#{jt},bsj=#{bsj},kk=#{kk},qtkk=#{qtkk}, " +
-            " gzze=#{gzze},name=#{name},work=#{work},center=#{center},gzbc=#{gzbc} where sfz=#{sfz} and is_valid=1 and create_date BETWEEN #{start} AND #{over} ")
+            " gzze=#{gzze},name=#{name},work=#{work},center=#{center},gzbc=#{gzbc},yjtc=#{yjtc},xkrs=#{xkrs} where sfz=#{sfz} and is_valid=1 and create_date BETWEEN #{start} AND #{over} ")
     void update(Compute compute);
 }

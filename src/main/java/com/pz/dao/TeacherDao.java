@@ -50,5 +50,6 @@ public interface TeacherDao {
     @Update("update t_lbs_teacher set is_valid=0 where id=#{id}")
     void deleteLbs(@Param("id") Integer id);
 
-
+    @Select("select class_money from t_lbs_teacher where is_valid=1 and level=#{tempWork}")
+    Integer findByTemp(@Param("tempWork") String tempWork);
 }

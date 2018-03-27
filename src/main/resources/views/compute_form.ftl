@@ -49,27 +49,42 @@
                                     </div>
                                 </div>
 
-                                <div class="am-u-sm-12">
-                                    <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
+                                <div class=" am-scrollable-horizontal am-text-nowrap">
+                                    <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black  " id="example-r">
                                         <thead>
                                             <tr>
                                                 <th>id</th>
                                                 <th>姓名</th>
                                                 <th>中心</th>
-                                                <th>工资总额</th>
+                                                <th>身份证号码</th>
+                                                <th>职位</th>
                                                 <th>基本工资</th>
                                                 <th>岗位工资</th>
                                                 <th>绩效工资</th>
                                                 <th>保密费</th>
-                                                <th>提成奖金</th>
-                                                <th>报/续班奖金</th>
-                                                <th>课时费</th>
-                                                <th>补发工资</th>
+                                                <th>工资补差</th>
+                                                <th>出勤天数</th>
+                                                <th>工资调整补差</th>
                                                 <th>饭贴</th>
                                                 <th>津贴</th>
-                                                <th>病事假</th>
-                                                <th>迟到/忘打卡扣款</th>
+                                                <th>幼儿园补贴</th>
+                                                <th>业绩/单位（元）</th>
+                                                <th>消课数</th>
+                                                <th>出差补贴</th>
+                                                <th>绩效系数</th>
+                                                <th>产假扣款</th>
+                                                <th>事假扣款</th>
+                                                <th>病假扣款</th>
+                                                <th>旷工扣款</th>
+                                                <th>迟到扣款</th>
                                                 <th>其他扣款</th>
+                                                <th>应发工资</th>
+                                                <th>个人社保合计</th>
+                                                <th>个人公积金</th>
+                                                <th>个人所得税</th>
+                                                <th>企业社保合计</th>
+                                                <th>企业公积金</th>
+                                                <th>实发工资</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -79,20 +94,35 @@
                                                 <td>${(page.getPage()-1)*10+(c_index+1)}</td>
                                                 <td>${c.name!""}</td>
                                                 <td>${c.center!""}</td>
-                                                <td>${c.gzze!0}</td>
+                                                <td>${c.sfz!0}</td>
+                                                <td>${c.work!''}</td>
                                                 <td>${c.dx!0}</td>
                                                 <td>${c.gwgz!0}</td>
                                                 <td>${c.jxgz!0}</td>
                                                 <td>${c.bmf!0}</td>
-                                                <td>${c.tcjj!0}</td>
-                                                <td>${c.bbj!0}</td>
-                                                <td>${c.ksf!0}</td>
+                                                <td>${c.gzbc!0}</td>
+                                                <td>${c.cqts!0}</td>
                                                 <td>${c.bfgz!0}</td>
                                                 <td>${c.ft!0}</td>
                                                 <td>${c.jt!0}</td>
-                                                <td>${c.bsj!0}</td>
-                                                <td>${c.kk!0}</td>
+                                                <td>${c.yeybt!0}</td>
+                                                <td>${c.yjtc!0}</td>
+                                                <td>${c.xkrs!0}</td>
+                                                <td>${c.ccbt!0}</td>
+                                                <td>${c.jxxs!0}</td>
+                                                <td>${c.cjkk!0}</td>
+                                                <td>${c.sjkk!0}</td>
+                                                <td>${c.bjkk!0}</td>
+                                                <td>${c.kgkk!0}</td>
+                                                <td>${c.cdkk!0}</td>
                                                 <td>${c.qtkk!0}</td>
+                                                <td>${c.yfgz!0}</td>
+                                                <td>${c.grsbhj!0}</td>
+                                                <td>${c.grgjj!0}</td>
+                                                <td>${c.grsds!0}</td>
+                                                <td>${c.qysbhj!0}</td>
+                                                <td>${c.qygjj!0}</td>
+                                                <td>${c.gzze!0}</td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
                                                         <a href="javascript:remove(${c.id});" class="tpl-table-black-operation-del">

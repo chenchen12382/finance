@@ -29,6 +29,9 @@ public class Compute extends BaseModel{
     private Double qysbhj; //企业社保合计
     private Double qygjj;  //企业公积金
 
+    private Integer yjtc; //业绩提成
+    private Integer xkrs;  //消课人数
+
 
     private Integer gzbc;  //工资补差
 
@@ -38,7 +41,7 @@ public class Compute extends BaseModel{
     private Integer gwgz;   //岗位工资
     private Integer jxgz;   //绩效工资
     private Integer bmf;    //保密费
-    private Integer tcjj;   //提成奖金
+    private Double tcjj;   //提成奖金
     private Integer bbj;    //报/续班奖金
     private Integer ksf;     // 课时费
     private Integer bfgz;     //补发工资
@@ -280,11 +283,11 @@ public class Compute extends BaseModel{
         this.bmf = bmf;
     }
 
-    public Integer getTcjj() {
+    public Double getTcjj() {
         return tcjj;
     }
 
-    public void setTcjj(Integer tcjj) {
+    public void setTcjj(Double tcjj) {
         this.tcjj = tcjj;
     }
 
@@ -350,5 +353,21 @@ public class Compute extends BaseModel{
 
     public void setQtkk(Integer qtkk) {
         this.qtkk = qtkk;
+    }
+
+    public Integer getYjtc() {
+        return yjtc;
+    }
+
+    public void setYjtc(Integer yjtc) {
+        this.yjtc = yjtc;
+    }
+
+    public Integer getXkrs() {
+        return xkrs;
+    }
+
+    public void setXkrs(Integer xkrs) {
+        this.xkrs = xkrs;
     }
 }

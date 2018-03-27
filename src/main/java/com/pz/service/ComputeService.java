@@ -4,9 +4,12 @@ import com.github.miemiedev.mybatis.paginator.domain.PageList;
 import com.pz.base.AssertUtil;
 import com.pz.base.BaseQuery;
 import com.pz.dao.ComputeDao;
+import com.pz.dao.TeacherDao;
 import com.pz.dto.ComputeFormQuery;
 import com.pz.exception.ParamException;
 import com.pz.model.Compute;
+import com.pz.model.LbsTeacher;
+import com.pz.model.ParentingTeacher;
 import com.pz.utils.DateUtil;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -30,6 +33,10 @@ public class ComputeService {
 
     @Autowired
     private ComputeDao computeDao;
+
+    @Autowired
+    private TeacherDao teacherDao;
+
 
 
 
@@ -56,10 +63,10 @@ public class ComputeService {
             bmf=0;
             compute.setBmf(0);
         }
-        Integer tcjj =  compute.getTcjj();
+        Double tcjj =  compute.getTcjj();
         if(tcjj==null){
-            tcjj=0;
-            compute.setTcjj(0);
+            tcjj=0.0;
+            compute.setTcjj(0.0);
         }
         Integer bbj =  compute.getBbj();
         if(bbj==null){
@@ -103,7 +110,7 @@ public class ComputeService {
         }
 
 
-        Integer count = dx+gwgz+jxgz+bmf+tcjj+bbj+ksf+bfgz+ft+jt-bsj-kk-qtkk;
+        double count = dx+gwgz+jxgz+bmf+tcjj+bbj+ksf+bfgz+ft+jt-bsj-kk-qtkk;
         System.out.println(count);
 
         compute.setGzze(Double.valueOf(count));
@@ -250,14 +257,14 @@ public class ComputeService {
                                     compute.setYeybt(Integer.valueOf(cellValue));
                                 }
 
-                                // 	提成奖金
+                                // 	提成奖金   业绩/单位（元）
                                 if(j==14){
-                                    compute.setTcjj(Integer.valueOf(cellValue));
+                                    compute.setYjtc(Integer.valueOf(cellValue));
                                 }
 
-                                // 	课时费
+                                // 	课时费    消课人数
                                 if(j==15){
-                                    compute.setKsf(Integer.valueOf(cellValue));
+                                    compute.setXkrs(Integer.valueOf(cellValue));
                                 }
 
                                 // 出差补贴
@@ -357,6 +364,79 @@ public class ComputeService {
                         //查询是否重复
                         Integer sfz = compute.getSfz();
                         Integer count=computeDao.findBySfz(sfz,start,over);
+
+                        //判断计算提成
+
+                        Integer yjtc = compute.getYjtc();
+                        Integer xkrs = compute.getXkrs();
+                        String work = compute.getWork();
+
+                        if(yjtc!=null){
+
+                            //有提成  //顾问
+                            if(work.trim().contains("顾问")){
+
+                                if(yjtc>=60000&&yjtc<110000){
+                                    compute.setTcjj(yjtc*0.02);
+
+                                }
+
+                                if(yjtc>=110000&& yjtc<160000){
+                                    compute.setTcjj(yjtc*0.03);
+                                }
+
+                                if(yjtc>=160000&& yjtc<9999999){
+                                    compute.setTcjj(yjtc*0.04);
+                                }
+
+                            }
+
+                        }
+
+
+                        if (xkrs!=null){
+                            //教师
+
+                            if(work.trim().contains("教师")||work.trim().contains("助教")||work.trim().contains("乐博士")||work.trim().contains("启稚")){
+
+                                if(work.trim().equals("亲子教师") || work.trim().equals("Dooky ABC助教")){
+
+                                    List<ParentingTeacher> parentingTeachers = teacherDao.selectForPage();
+
+                                    for(int k=0;k<parentingTeachers.size();k++)
+                                    {
+                                        if(xkrs>=parentingTeachers.get(k).getOffClassNumStart()&&xkrs<parentingTeachers.get(k).getOffClassNumOver()){
+
+                                            compute.setBbj(xkrs*parentingTeachers.get(k).getClassMoney());
+                                        }
+                                    }
+
+
+                                }else {
+
+                                    String tempWork ;
+
+                                     if (work.trim().contains("助教")){
+                                        tempWork="助教";
+                                     }
+
+                                    else  {
+                                        tempWork="主教";
+                                    }
+
+
+                                     Integer ksf = teacherDao.findByTemp(tempWork);
+
+
+
+                                    compute.setBbj(xkrs*ksf);
+
+                                }
+                            }
+
+                        }
+
+
 
                         if(count>0){
                             compute.setStart(start);
