@@ -22,7 +22,62 @@
 
     </where>
 
-      ORDER BY create_date DESC
+      ORDER BY id DESC
+    </select>
+
+
+    <select id="findCount" resultType="com.pz.model.Compute" >
+        SELECT
+	sum(dx) AS dx,
+	sum(gwgz) AS gwgz,
+	sum(jxgz) AS jxgz,
+	sum(bmf) AS bmf,
+	sum(gzbc) AS gzbc,
+	sum(cqts) AS cqts,
+	sum(bfgz) AS bfgz,
+	sum(ft) AS ft,
+	sum(jt) AS jt,
+	sum(yeybt) AS yeybt,
+	sum(yjtc) AS yjtc,
+	sum(tcjj) AS tcjj,
+	sum(xkrs) AS xkrs,
+	sum(bbj) AS bbj,
+	sum(ccbt) AS ccbt,
+	sum(jxxs) AS jxxs,
+	sum(cjkk) AS cjkk,
+	sum(sjkk) AS sjkk,
+	sum(bjkk) AS bjkk,
+	sum(kgkk) AS kgkk,
+	sum(cdkk) AS cdkk,
+	sum(qtkk) AS qtkk,
+	sum(yfgz) AS yfgz,
+	sum(grsbhj) AS grsbhj,
+	sum(grgjj) AS grgjj,
+	sum(grsds) AS grsds,
+	sum(qysbhj) AS qysbhj,
+	sum(qygjj) AS qygjj,
+	sum(gzze) AS gzze
+FROM
+	t_compute
+
+        <where>
+            is_valid=1
+            <if test="name!=null and name!=''">
+                and name LIKE '%${name}%'
+            </if>
+
+            <if test="center!=null and center!=''">
+                and center LIKE '%${center}%'
+            </if>
+
+
+            and create_date BETWEEN #{start} AND #{over}
+
+
+        </where>
+
+
+
     </select>
 
 

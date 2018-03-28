@@ -145,9 +145,17 @@ public class UserController extends BaseController{
      * 计算
      */
     @RequestMapping("compute")
-    public String compute(Model model,BaseQuery query){
+    public String compute(Model model,BaseQuery query,Integer id){
           List<Employee> employees = employeeService.findAll();
           model.addAttribute("employees",employees);
+        Compute compute;
+        if(id != null){
+            compute =  computeService.selectForId(id);
+          }else {
+            compute = new Compute();
+          }
+          model.addAttribute("compute",compute);
+
         return "compute";
     }
 
@@ -158,8 +166,11 @@ public class UserController extends BaseController{
         PageList<Compute> computes = computeService.selectForPage(query);
         model.addAttribute("computes",computes);
         model.addAttribute("page",computes.getPaginator());
-
         model.addAttribute("query",query);
+
+        //计算统计
+        Compute compute = computeService.findCount(query);
+        model.addAttribute("footer",compute);
 
 
         return "compute_form";

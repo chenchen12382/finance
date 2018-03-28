@@ -6,6 +6,7 @@ import com.pz.model.Compute;
 import com.pz.service.ComputeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -28,8 +29,37 @@ public class ComputeController extends BaseController {
 
         computeService.insert(compute);
 
-        return success("结果为："+compute.getGzze());
+        return success("插入成功！");
     }
+
+
+
+
+    @RequestMapping("insert")
+    public String add(Compute compute){
+
+        computeService.add(compute);
+
+        return "redirect:/compute";
+    }
+
+
+//    /**
+//     * 跳转到编辑框
+//     * @param id
+//     * @param model
+//     * @return
+//     */
+//    @RequestMapping("update_form")
+//    public String updateForm(Integer id, Model model){
+//
+//       Compute compute = computeService.selectForId(id);
+//       model.addAttribute("")
+//
+//        return "compute";
+//    }
+
+
 
 
     @RequestMapping("delete")

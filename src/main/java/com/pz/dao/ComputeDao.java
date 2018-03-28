@@ -35,11 +35,19 @@ public interface ComputeDao {
     void addAll(List<Compute> computes);
 
     @Select("select count(1) from t_compute where sfz=#{sfz} and is_valid=1 and create_date BETWEEN #{start} AND #{over} ")
-    Integer findBySfz(@Param("sfz") Integer sfz, @Param("start") Date start, @Param("over") Date over);
+    Integer findBySfz(@Param("sfz") String sfz, @Param("start") Date start, @Param("over") Date over);
 
     @Update("update t_compute set sfz=#{sfz},cqts=#{cqts},yeybt=#{yeybt},ccbt=#{ccbt},jxxs=#{jxxs},cjkk=#{cjkk},sjkk=#{sjkk},bjkk=#{bjkk},kgkk=#{kgkk},cdkk=#{cdkk},yfgz=#{yfgz}, " +
             " grsbhj=#{grsbhj},grgjj=#{grgjj},grsds=#{grsds},qysbhj=#{qysbhj},qygjj=#{qygjj}, " +
             " dx=#{dx},gwgz=#{gwgz},jxgz=#{jxgz},bmf=#{bmf},tcjj=#{tcjj},bbj=#{bbj},ksf=#{ksf},bfgz=#{bfgz},ft=#{ft},jt=#{jt},bsj=#{bsj},kk=#{kk},qtkk=#{qtkk}, " +
             " gzze=#{gzze},name=#{name},work=#{work},center=#{center},gzbc=#{gzbc},yjtc=#{yjtc},xkrs=#{xkrs} where sfz=#{sfz} and is_valid=1 and create_date BETWEEN #{start} AND #{over} ")
     void update(Compute compute);
+
+
+
+    Compute findCount(ComputeFormQuery query);
+
+
+    @Select("select * from t_compute where id = #{id}")
+    Compute selectForId(@Param("id") Integer id);
 }

@@ -10,7 +10,7 @@ import java.util.Date;
  */
 public class Compute extends BaseModel{
 
-    private Integer sfz;    //省份证号
+    private String sfz;    //省份证号
     private Integer cqts;   //出勤天数
     private Integer yeybt;  //幼儿园补贴
     private Integer ccbt;   //出差补贴
@@ -145,11 +145,11 @@ public class Compute extends BaseModel{
         this.yeybt = yeybt;
     }
 
-    public Integer getSfz() {
+    public String getSfz() {
         return sfz;
     }
 
-    public void setSfz(Integer sfz) {
+    public void setSfz(String sfz) {
         this.sfz = sfz;
     }
 

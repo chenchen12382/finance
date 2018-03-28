@@ -17,6 +17,30 @@
 
                             </div>
                             <div class="widget-body  am-fr">
+                                <div class="am-u-sm-12 am-u-md-6 am-u-lg-2">
+                                    <div class="am-form-group">
+                                    <#--<input type="text" id="s_start" minlength="3" placeholder="开始时间" class="am-form-field" value="${query.start?string("yyyy-MM-dd")}" data-am-datepicker />-->
+                                        <div class="am-btn-toolbar">
+                                            <div class="am-btn-group am-btn-group-xs">
+                                                <button type="button" class="am-btn am-btn-default am-btn-success" id="add_btn"><span class="am-icon-plus"></span> 新增</button>
+
+                                                <button type="button" id="import_btn" class="am-btn am-btn-warning tpl-btn-bg-color-success ">批量上传</button>
+                                            <#--<button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 保存</button>-->
+                                            <#--<button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 审核</button>-->
+                                            <#--<button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>-->
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="am-u-sm-12 am-u-md-6 am-u-lg-2">
+                                    <div class="am-form-group">
+                                    <#--<input type="text" id="s_start" minlength="3" placeholder="开始时间" class="am-form-field" value="${query.start?string("yyyy-MM-dd")}" data-am-datepicker />-->
+
+
+                                    </div>
+                                </div>
 
                                 <div class="am-u-sm-12 am-u-md-6 am-u-lg-2">
                                     <div class="am-form-group">
@@ -49,6 +73,10 @@
                                     </div>
                                 </div>
 
+
+
+
+
                                 <div class=" am-scrollable-horizontal am-text-nowrap">
                                     <table width="100%" class="am-table am-table-striped am-table-bordered am-table-compact" id="example-r">
                                         <thead>
@@ -69,7 +97,9 @@
                                                 <th>津贴</th>
                                                 <th>幼儿园补贴</th>
                                                 <th>业绩/单位（元）</th>
+                                                <th>提成奖金</th>
                                                 <th>消课数</th>
+                                                <th>课时费</th>
                                                 <th>出差补贴</th>
                                                 <th>绩效系数</th>
                                                 <th>产假扣款</th>
@@ -107,7 +137,9 @@
                                                 <td>${c.jt!0}</td>
                                                 <td>${c.yeybt!0}</td>
                                                 <td>${c.yjtc!0}</td>
+                                                <td>${c.tcjj!0}</td>
                                                 <td>${c.xkrs!0}</td>
+                                                <td>${c.bbj!0}</td>
                                                 <td>${c.ccbt!0}</td>
                                                 <td>${c.jxxs!0}</td>
                                                 <td>${c.cjkk!0}</td>
@@ -125,6 +157,9 @@
                                                 <td>${c.gzze!0}</td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
+                                                        <a href="javascript:edit(${c.id});" >
+                                                            <i class="am-icon-pencil"></i> 编辑
+                                                        </a>
                                                         <a href="javascript:remove(${c.id});" class="tpl-table-black-operation-del">
                                                             <i class="am-icon-trash"></i> 删除
                                                         </a>
@@ -134,6 +169,48 @@
                                             </#list>
                                         </#if>
                                         </tbody>
+                                        <tfooter>
+                                            <#if footer ?has_content>
+                                            <tr>
+                                                <td>统计:</td>
+                                                <td>${footer.getName()!""}</td>
+                                                <td>${footer.getCenter()!""}</td>
+                                                <td>${footer.getSfz()!""}</td>
+                                                <td>${footer.getWork()!''}</td>
+                                                <td>${footer.getDx()!0}</td>
+                                                <td>${footer.getGwgz()!0}</td>
+                                                <td>${footer.getJxgz()!0}</td>
+                                                <td>${footer.getBmf()!0}</td>
+                                                <td>${footer.getGzbc()!0}</td>
+                                                <td>${footer.getCqts()!0}</td>
+                                                <td>${footer.getBfgz()!0}</td>
+                                                <td>${footer.getFt()!0}</td>
+                                                <td>${footer.getJt()!0}</td>
+                                                <td>${footer.getYeybt()!0}</td>
+                                                <td>${footer.getYjtc()!0}</td>
+                                                <td>${footer.getTcjj()!0}</td>
+                                                <td>${footer.getXkrs()!0}</td>
+                                                <td>${footer.getBbj()!0}</td>
+                                                <td>${footer.getCcbt()!0}</td>
+                                                <td>${footer.getJxxs()!0}</td>
+                                                <td>${footer.getCjkk()!0}</td>
+                                                <td>${footer.getSjkk()!0}</td>
+                                                <td>${footer.getBjkk()!0}</td>
+                                                <td>${footer.getKgkk()!0}</td>
+                                                <td>${footer.getCdkk()!0}</td>
+                                                <td>${footer.getQtkk()!0}</td>
+                                                <td>${footer.getYfgz()!0}</td>
+                                                <td>${footer.getGrsbhj()!0}</td>
+                                                <td>${footer.getGrgjj()!0}</td>
+                                                <td>${footer.getGrsds()!0}</td>
+                                                <td>${footer.getQysbhj()!0}</td>
+                                                <td>${footer.getQygjj()!0}</td>
+                                                <td>${footer.getGzze()!0}</td>
+
+                                            </tr>
+                                            </#if>
+
+                                        </tfooter>
                                     </table>
                                 </div>
                                 <div class="am-u-lg-12 am-cf">
@@ -228,6 +305,31 @@
         </div>
     </div>
 </div>
+
+
+<div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt-import" >
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">批量上传</div>
+        <div class="am-modal-bd">
+            <form class="am-form" id="import_form">
+                <div class="am-form-group">
+                    <div class="am-form-group am-form-file">
+                        <button type="button" class="am-btn am-btn-danger am-btn-sm">
+                            <i class="am-icon-cloud-upload"></i> 选择要上传的文件</button>
+                        <input id="doc-form-file" name="upExl" type="file" multiple>
+                    </div>
+                    <div id="file-list"></div>
+                </div>
+            </form>
+
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+            <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+        </div>
+    </div>
+</div>
+
 
 <#include "include/common.footer.ftl">
 </body>

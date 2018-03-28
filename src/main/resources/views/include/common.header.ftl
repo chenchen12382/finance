@@ -21,8 +21,8 @@
 
     <!--引入JavaScript-->
     <#--<script src="js/amazeui.datatables.min.js"></script>-->
-    <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.4.js"></script>
-    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <#--<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.4.js"></script>-->
+    <#--<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>-->
 
 </head>
 
