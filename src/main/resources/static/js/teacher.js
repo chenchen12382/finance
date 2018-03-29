@@ -258,3 +258,138 @@ function remove_lbs(id) {
 
 
 }
+
+
+
+function  resetValue_sale() {
+    $("#zbfwStart").val("");
+    $("#zbfwOver").val("");
+    $("#tcbz").val("");
+}
+
+/**
+ * 顾问
+ */
+function add_sale() {
+
+    $('#prompt_sale').modal({
+        relatedTarget: this,
+        onConfirm: function(e) {
+
+            $.ajax({
+                type:"POST",
+                url:ctx+'teacher/add_sale',
+                data:{"zbfwStart":$("#zbfwStart").val(),'zbfwOver':$('#zbfwOver').val(),'tcbz':$('#tcbz').val()},
+                success:function(result){  //function1()
+                    if(result.resultCode==1){
+                        alert("操作成功");
+                        location.reload();
+                    }else {
+                        my_alert(result.resultMessage);
+                    }
+                }
+            });
+            resetValue_sale();
+        },
+
+        onCancel: function() {
+            resetValue_sale();
+        }
+    });
+}
+
+function edit_sale(id) {
+
+    var id = id;
+    var url = ctx+'teacher/selectForIdSale'
+    var param={'id':id};
+    var zbfwStart;
+    var zbfwOver;
+    var tcbz;
+    $.ajax({
+        type:"POST",
+        url:url,
+        data:param,
+        async: false,
+        success:function(result){  //function1()
+            zbfwStart = result.zbfwStart;
+            zbfwOver = result.zbfwOver;
+            tcbz = result.tcbz;
+            $('#zbfwStart').val(zbfwStart);
+            $('#zbfwOver').val(zbfwOver);
+            $('#tcbz').val(tcbz);
+        }
+
+    });
+
+
+    // $('#zbfwStart').val(zbfwStart);
+    // $('#zbfwOver').val(zbfwOver);
+    // $('#tcbz').val(tcbz);
+
+
+
+    $('#prompt_sale').modal({
+        relatedTarget: this,
+        onConfirm: function(e) {
+
+            $.ajax({
+                type:"POST",
+                url:ctx+'teacher/update_sale',
+                data:{"zbfwStart":$("#zbfwStart").val(),'zbfwOver':$('#zbfwOver').val(),'tcbz':$('#tcbz').val(),'id':id},
+                success:function(result){  //function1()
+                    if(result.resultCode==1){
+                        alert(result.resultMessage);
+                        location.reload();
+                    }else {
+                        my_alert(result.resultMessage);
+
+                    }
+                }
+
+            });
+
+            resetValue_sale();
+        },
+
+        onCancel: function() {
+            resetValue_sale();
+        }
+    });
+
+
+}
+
+
+function remove_sale(id) {
+    $('#my_message').html("你确定要删除么！");
+    $('#my_alert').modal({
+        relatedTarget: this,
+        onConfirm: function(options) {
+            $.ajax({
+                type:"POST",
+                url:ctx+'teacher/delete_sale',
+                data:{'id':id},
+                async: false,
+                success:function(result){  //function1()
+                    if(result.resultCode==1){
+                        // my_alert(result.resultMessage)
+                        alert(result.resultMessage);
+                        location.reload();
+                    }else {
+                        my_alert(result.resultMessage)
+                        // alert(result.resultMessage);
+                    }
+                }
+            });
+
+        },
+        onCancel: function() {
+            $(this).removeData('amui.modal');
+        }
+    });
+
+
+}
+
+

@@ -110,6 +110,7 @@
                                         </div>
                                         <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
                                             <thead>
+
                                             <tr>
                                                 <th>id</th>
                                                 <th>等级</th>
@@ -150,6 +151,68 @@
                         </div>
                     </div>
                 </div>
+
+
+                <div class="row">
+
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-6">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <div class="widget-title am-fl">顾问提成方案</div>
+                                <div class="widget-function am-fr am-btn-group-xs">
+                                    <button type="button" class="am-btn am-btn-default am-btn-success" id="add_btn_sale" onclick="add_sale()">  <span class="am-icon-plus"></span> 新增</button>
+                                </div>
+                            </div>
+                            <div class="widget-body  widget-body-lg am-fr">
+
+                                <table width="100%" class="am-table am-table-compact am-table-bordered tpl-table-black " id="example-r">
+                                    <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>指标范围起</th>
+                                        <th>指标范围止</th>
+                                        <th>提成标准</th>
+                                        <th>操作</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <#if sales ?has_content>
+                                        <#list sales as sale>
+                                        <tr class="gradeX" id="">
+                                            <td>${sale_index+1}</td>
+                                            <td>${sale.zbfwStart}</td>
+                                            <td>${sale.zbfwOver}</td>
+                                            <td>${sale.tcbz}</td>
+                                            <td>
+                                                <div class="tpl-table-black-operation">
+                                                    <a href="javascript:edit_sale(${sale.id});" >
+                                                        <i class="am-icon-pencil"></i> 编辑
+                                                    </a>
+                                                    <a href="javascript:remove_sale(${sale.id});" class="tpl-table-black-operation-del">
+                                                        <i class="am-icon-trash"></i> 删除
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </#list>
+
+                                    </#if>
+                                    <!-- more data -->
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+
+
             </div>
         </div>
 
@@ -209,6 +272,42 @@
                     </div>
                 </div>
             </div>
+
+
+
+            <#--顾问-->
+            <div class="am-modal am-modal-prompt" tabindex="-1" id="prompt_sale" >
+                <div class="am-modal-dialog">
+                    <div class="am-modal-hd">乐博士老师------亲子老师</div>
+                    <div class="am-modal-bd">
+                        <form class="am-form" id="sale_form">
+                            <div class="am-form-group">
+                                <label for="doc-ipt-email-1">指标范围起</label>
+                                <input type="number" class="" id="zbfwStart" name="zbfwStart" placeholder="指标范围起" required/>
+                            </div>
+                            <div class="am-form-group">
+                                <label for="doc-ipt-email-1">指标范围止</label>
+                                <input type="number" class="" id="zbfwOver" name="zbfwOver" placeholder="指标范围止" required/>
+                            </div>
+                        <#--<div class="am-form-group">-->
+                        <#--<label for="doc-ipt-email-1">销课人数</label>-->
+                        <#--<input type="number" class="" id="offClassNum" name="offClassNum" placeholder="销课人数(按出勤人数算)" required/>-->
+                        <#--</div>-->
+                            <div class="am-form-group">
+                                <label for="doc-ipt-email-1">提成标准</label>
+                                <input type="number" class="" id="tcbz" name="tcbz" placeholder="实例！2%为0.02！" required/>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="am-modal-footer">
+                        <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+                        <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+                    </div>
+                </div>
+            </div>
+
+
 
     <#include "include/common.footer.ftl">
 

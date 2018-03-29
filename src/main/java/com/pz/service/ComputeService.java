@@ -10,6 +10,7 @@ import com.pz.exception.ParamException;
 import com.pz.model.Compute;
 import com.pz.model.LbsTeacher;
 import com.pz.model.ParentingTeacher;
+import com.pz.model.Sale;
 import com.pz.utils.DateUtil;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -398,18 +399,30 @@ public class ComputeService {
                             //有提成  //顾问
                             if(work.trim().contains("顾问")){
 
-                                if(yjtc>=60000&&yjtc<110000){
-                                    compute.setTcjj(yjtc*0.02);
+                                List<Sale> sales = teacherDao.selectForPageSale();
+
+                                for (int k = 0;k<sales.size();k++){
+                                    Integer starts=sales.get(k).getZbfwStart();
+                                    Integer overs=sales.get(k).getZbfwOver();
+
+                                    if(yjtc>=sales.get(k).getZbfwStart()&&yjtc<sales.get(k).getZbfwOver()){
+                                        compute.setTcjj(yjtc*sales.get(k).getTcbz());
+                                    }
 
                                 }
 
-                                if(yjtc>=110000&& yjtc<160000){
-                                    compute.setTcjj(yjtc*0.03);
-                                }
-
-                                if(yjtc>=160000&& yjtc<9999999){
-                                    compute.setTcjj(yjtc*0.04);
-                                }
+//                                if(yjtc>=60000&&yjtc<110000){
+//                                    compute.setTcjj(yjtc*0.02);
+//
+//                                }
+//
+//                                if(yjtc>=110000&& yjtc<160000){
+//                                    compute.setTcjj(yjtc*0.03);
+//                                }
+//
+//                                if(yjtc>=160000&& yjtc<9999999){
+//                                    compute.setTcjj(yjtc*0.04);
+//                                }
 
                             }
 

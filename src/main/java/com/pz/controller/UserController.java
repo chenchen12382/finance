@@ -94,8 +94,11 @@ public class UserController extends BaseController{
     public String teacher(Model model){
         List<ParentingTeacher> parentingTeachers=teacherService.selectForPage();
         List<LbsTeacher> lbsTeachers = teacherService.selectForPageLbs();
+        List<Sale> sales = teacherService.selectForPageSale();
+
         model.addAttribute("parentingTeachers",parentingTeachers);
         model.addAttribute("lbsTeachers",lbsTeachers);
+        model.addAttribute("sales",sales);
         return "teacher";
     }
 

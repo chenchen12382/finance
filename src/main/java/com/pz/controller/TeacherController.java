@@ -4,6 +4,7 @@ import com.pz.base.BaseController;
 import com.pz.base.ResultInfo;
 import com.pz.model.LbsTeacher;
 import com.pz.model.ParentingTeacher;
+import com.pz.model.Sale;
 import com.pz.service.TeacherService;
 import com.sun.net.httpserver.Authenticator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,6 +59,40 @@ public class TeacherController extends BaseController{
     }
 
 
+    @RequestMapping("add_sale")
+    @ResponseBody
+    public ResultInfo insertForSale(Sale sale){
+
+        teacherService.insertForSale(sale);
+        return success("添加成功");
+    }
+
+
+    @RequestMapping("selectForIdSale")
+    @ResponseBody
+    public Sale selectForIdSale(Integer id){
+        Sale sales = teacherService.selectForIdSale(id);
+        return sales;
+    }
+
+    @RequestMapping("update_sale")
+    @ResponseBody
+    public ResultInfo update_sale(Sale sale){
+        teacherService.update_sale(sale);
+        return success("修改成功");
+
+    }
+
+    @RequestMapping("delete_sale")
+    @ResponseBody
+    public ResultInfo deleteSale(Integer id){
+        teacherService.deleteSale(id);
+        return success("删除成功");
+    }
+
+
+
+
     @RequestMapping("add_lbs")
     @ResponseBody
     public ResultInfo insertForLbs(LbsTeacher teacher){
@@ -88,6 +123,7 @@ public class TeacherController extends BaseController{
         teacherService.deleteLbs(id);
         return success("删除成功");
     }
+
 
 
 

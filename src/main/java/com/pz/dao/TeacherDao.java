@@ -2,6 +2,7 @@ package com.pz.dao;
 
 import com.pz.model.LbsTeacher;
 import com.pz.model.ParentingTeacher;
+import com.pz.model.Sale;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -52,4 +53,20 @@ public interface TeacherDao {
 
     @Select("select class_money from t_lbs_teacher where is_valid=1 and level=#{tempWork}")
     Integer findByTemp(@Param("tempWork") String tempWork);
+
+    @Select("select * from t_guwen where is_valid=1")
+    List<Sale> selectForPageSale();
+
+    @Insert("insert into t_guwen (zbfw_start,zbfw_over,tcbz,is_valid,create_date,update_date) values " +
+            "(#{zbfwStart},${zbfwOver},#{tcbz},1,now(),now())")
+    void insertForSale(Sale sale);
+
+    @Select("select * from t_guwen where id=#{id} and is_valid=1")
+    Sale selectForIdSale(@Param("id") Integer id);
+
+    @Update("update t_guwen set zbfw_start=#{zbfwStart},zbfw_over=#{zbfwOver},tcbz=#{tcbz},update_date=now() where id = #{id} ")
+    void update_sale(Sale sale);
+
+    @Update("update t_guwen set is_valid=0 where id=#{id}")
+    void deleteSale(@Param("id") Integer id);
 }
