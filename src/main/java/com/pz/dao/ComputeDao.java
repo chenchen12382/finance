@@ -50,4 +50,11 @@ public interface ComputeDao {
 
     @Select("select * from t_compute where id = #{id}")
     Compute selectForId(@Param("id") Integer id);
+
+
+    @Update("update t_compute set sfz=#{sfz},cqts=#{cqts},yeybt=#{yeybt},ccbt=#{ccbt},jxxs=#{jxxs},cjkk=#{cjkk},sjkk=#{sjkk},bjkk=#{bjkk},kgkk=#{kgkk},cdkk=#{cdkk},yfgz=#{yfgz}, " +
+            " grsbhj=#{grsbhj},grgjj=#{grgjj},grsds=#{grsds},qysbhj=#{qysbhj},qygjj=#{qygjj}, " +
+            " dx=#{dx},gwgz=#{gwgz},jxgz=#{jxgz},bmf=#{bmf},tcjj=#{tcjj},bbj=#{bbj},ksf=#{ksf},bfgz=#{bfgz},ft=#{ft},jt=#{jt},bsj=#{bsj},kk=#{kk},qtkk=#{qtkk}, " +
+            " gzze=#{gzze},name=#{name},work=#{work},center=#{center},gzbc=#{gzbc},yjtc=#{yjtc},xkrs=#{xkrs},update_date=now() where id=#{id} and is_valid=1 ")
+    void updateForId(Compute compute);
 }

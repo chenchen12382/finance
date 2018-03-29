@@ -269,6 +269,8 @@ $('#compute_btn').click(function () {
 
 $('#add_btn').click(function () {
 
+    var id = $('#f_id').val();
+
     var name=$('#f_name').val();
     var center=$('#f_center').val();
     var sfz=$('#f_sfz').val();
@@ -301,44 +303,159 @@ $('#add_btn').click(function () {
     var qygjj=$('#f_qygjj').val();
     var gzze=$('#f_gzze').val();
 
+    // my_NAN(dx,'基本工资必须为数字！');
+    if(isNaN(dx)){
+        my_alert('基本工资必须为数字！');
+        return;
+    }
 
-    my_NAN(dx,'基本工资必须为数字！');
-    my_NAN(gwgz,'岗位工资必须为数字！');
-    my_NAN(jxgz,'绩效工资必须为数字！');
-    my_NAN(bmf,'保密费必须为数字！');
-    my_NAN(gzbc,'工资补差必须为数字！');
-    my_NAN(cqts,'出勤天数必须为数字！');
-    my_NAN(bfgz,'补发工资必须为数字！');
-    my_NAN(ft,'饭贴必须为数字！');
-    my_NAN(jt,'津贴必须为数字！');
-    my_NAN(yeybt,'幼儿园补贴必须为数字！');
-    my_NAN(tcjj,'提成奖金必须为数字！');
-    my_NAN(bbj,'报班奖必须为数字！');
-    my_NAN(ccbt,'出差补贴必须为数字！');
-    my_NAN(jxxs,'绩效系数必须为数字！');
-    my_NAN(cjkk,'产假扣款必须为数字！');
-    my_NAN(sjkk,'事假扣款必须为数字！');
-    my_NAN(bjkk,'病假扣款必须为数字！');
-    my_NAN(kgkk,'旷工扣款必须为数字！');
-    my_NAN(cdkk,'迟到扣款必须为数字！');
-    my_NAN(qtkk,'其它扣款必须为数字！');
-    my_NAN(yfgz,'应发工资必须为数字！');
-    my_NAN(grsbhj,'个人社保合计必须为数字！');
-    my_NAN(grgjj,'个人公积金必须为数字！');
-    my_NAN(grsds,'个人所得税必须为数字！');
-    my_NAN(qysbhj,'企业社保合计必须为数字！');
-    my_NAN(qygjj,'企业公积金必须为数字！');
-    my_NAN(gzze,'实发工资必须为数字！');
+    // my_NAN(gwgz,'岗位工资必须为数字！');
+    if(isNaN(gwgz)){
+        my_alert('岗位工资必须为数字！');
+        return;
+    }
+    // my_NAN(jxgz,'绩效工资必须为数字！');
+    if(isNaN(jxgz)){
+        my_alert('绩效工资必须为数字！');
+        return;
+    }
+    // my_NAN(bmf,'保密费必须为数字！');
+    if(isNaN(bmf)){
+        my_alert('保密费必须为数字！');
+        return;
+    }
+    // my_NAN(gzbc,'工资补差必须为数字！');
+    if(isNaN(gzbc)){
+        my_alert('工资补差必须为数字！');
+        return;
+    }
+    // my_NAN(cqts,'出勤天数必须为数字！');
+    if(isNaN(cqts)){
+        my_alert('出勤天数必须为数字！');
+        return;
+    }
+    // my_NAN(bfgz,'补发工资必须为数字！');
+    if(isNaN(bfgz)){
+        my_alert('补发工资必须为数字！');
+        return;
+    }
+    // my_NAN(ft,'饭贴必须为数字！');
+    if(isNaN(ft)){
+        my_alert('饭贴必须为数字！');
+        return;
+    }
+    // my_NAN(jt,'津贴必须为数字！');
+    if(isNaN(jt)){
+        my_alert('津贴必须为数字！');
+        return;
+    }
+    // my_NAN(yeybt,'幼儿园补贴必须为数字！');
+    if(isNaN(yeybt)){
+        my_alert('幼儿园补贴必须为数字！');
+        return;
+    }
+    // my_NAN(tcjj,'提成奖金必须为数字！');
+    if(isNaN(tcjj)){
+        my_alert('提成奖金必须为数字！');
+        return;
+    }
+    // my_NAN(bbj,'报班奖必须为数字！');
+    if(isNaN(bbj)){
+        my_alert('报班奖必须为数字！');
+        return;
+    }
+    // my_NAN(ccbt,'出差补贴必须为数字！');
+    if(isNaN(ccbt)){
+        my_alert('出差补贴必须为数字！');
+        return;
+    }
+    // my_NAN(jxxs,'绩效系数必须为数字！');
+    if(isNaN(jxxs)){
+        my_alert('绩效系数必须为数字！');
+        return;
+    }
+    // my_NAN(cjkk,'产假扣款必须为数字！');
+    if(isNaN(cjkk)){
+        my_alert('产假扣款必须为数字！');
+        return;
+    }
+    // my_NAN(sjkk,'事假扣款必须为数字！');
+    if(isNaN(sjkk)){
+        my_alert('事假扣款必须为数字！');
+        return;
+    }
+    // my_NAN(bjkk,'病假扣款必须为数字！');
+    if(isNaN(bjkk)){
+        my_alert('病假扣款必须为数字！');
+        return;
+    }
+    // my_NAN(kgkk,'旷工扣款必须为数字！');
+    if(isNaN(kgkk)){
+        my_alert('旷工扣款必须为数字！');
+        return;
+    }
+    // my_NAN(cdkk,'迟到扣款必须为数字！');
+    if(isNaN(cdkk)){
+        my_alert('迟到扣款必须为数字！');
+        return;
+    }
+    // my_NAN(qtkk,'其它扣款必须为数字！');
+    if(isNaN(qtkk)){
+        my_alert('其它扣款必须为数字！');
+        return;
+    }
+    // my_NAN(yfgz,'应发工资必须为数字！');
+    if(isNaN(yfgz)){
+        my_alert('应发工资必须为数字！');
+        return;
+    }
+    // my_NAN(grsbhj,'个人社保合计必须为数字！');
+    if(isNaN(grsbhj)){
+        my_alert('个人社保合计必须为数字！');
+        return;
+    }
+    // my_NAN(grgjj,'个人公积金必须为数字！');
+    if(isNaN(grgjj)){
+        my_alert('个人公积金必须为数字！');
+        return;
+    }
+    // my_NAN(grsds,'个人所得税必须为数字！');
+    if(isNaN(grsds)){
+        my_alert('个人所得税必须为数字！');
+        return;
+    }
+    // my_NAN(qysbhj,'企业社保合计必须为数字！');
+    if(isNaN(qysbhj)){
+        my_alert('企业社保合计必须为数字！');
+        return;
+    }
+    // my_NAN(qygjj,'企业公积金必须为数字！');
+    if(isNaN(qygjj)){
+        my_alert('企业公积金必须为数字！');
+        return;
+    }
+    // my_NAN(gzze,'实发工资必须为数字！');
+    if(isNaN(gzze)){
+        my_alert('实发工资必须为数字！');
+        return;
+    }
 
 
     var  data = {'name':name,'center':center,'sfz':sfz,'work':work,'dx':dx,'gwgz':gwgz,'jxgz':jxgz,'bmf':bmf,'gzbc':gzbc,
         'cqts':cqts,'bfgz':bfgz,'ft':ft,'jt':jt,'yeybt':yeybt,'tcjj':tcjj,'bbj':bbj,'ccbt':ccbt,'jxxs':jxxs,'cjkk':cjkk,'sjkk':sjkk,'bjkk':bjkk,
-         'kgkk':kgkk,'cdkk':cdkk,'qtkk':qtkk,'yfgz':yfgz,'grsbhj':grsbhj,'grgjj':grgjj,'grsds':grsds,'qysbhj':qysbhj,'qygjj':qygjj,'gzze':gzze}
+         'kgkk':kgkk,'cdkk':cdkk,'qtkk':qtkk,'yfgz':yfgz,'grsbhj':grsbhj,'grgjj':grgjj,'grsds':grsds,'qysbhj':qysbhj,'qygjj':qygjj,'gzze':gzze,'id':id}
 
+
+     var url;
+    if(isEmpty(id)){
+        url=ctx+'compute/add';
+    }else {
+        url=ctx+'compute/update';
+    }
 
     $.ajax({
         type:"POST",
-        url:ctx+'compute/add',
+        url:url,
         data:data,
         success:function(result){  //function1()
             if(result.resultCode==1){
@@ -354,12 +471,12 @@ $('#add_btn').click(function () {
 });
 
 
-function my_NAN(num,message) {
-    if(!isNaN(num)){
-        my_alert(message);
-        return;
-    }
-}
+// function my_NAN(num,message) {
+//     if(isNaN(num)){
+//         alert(message);
+//         return;
+//     }
+// }
 
 
 

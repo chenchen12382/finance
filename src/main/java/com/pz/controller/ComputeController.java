@@ -33,6 +33,16 @@ public class ComputeController extends BaseController {
     }
 
 
+    @RequestMapping("update")
+    @ResponseBody
+    public ResultInfo update(Compute compute){
+
+        computeService.update(compute);
+
+        return success("修改成功成功！");
+    }
+
+
 
 
     @RequestMapping("insert")

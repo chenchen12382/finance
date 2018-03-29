@@ -106,3 +106,35 @@ function edit(id) {
     window.location.href=ctx+"compute?id="+id;
 
 }
+
+
+function  remove(id) {
+    $('#my_message').html("你确定要删除么！");
+    $('#my_alert').modal({
+        relatedTarget: this,
+        onConfirm: function(options) {
+            $.ajax({
+                type:"POST",
+                url:ctx+'compute/delete',
+                data:{'id':id},
+                async: false,
+                success:function(result){  //function1()
+                    if(result.resultCode==1){
+                        // my_alert(result.resultMessage)
+                        alert(result.resultMessage);
+                        location.reload();
+                    }else {
+                        my_alert(result.resultMessage)
+                        // alert(result.resultMessage);
+                    }
+                }
+            });
+
+        },
+        onCancel: function() {
+            $(this).removeData('amui.modal');
+        }
+    });
+
+}
+

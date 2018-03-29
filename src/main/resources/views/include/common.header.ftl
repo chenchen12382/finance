@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="assets/css/app.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.form.js"></script>
+    <script src="js/common.js"></script>
     <script src="assets/js/theme.js"></script>
     <!--引入css-->
 

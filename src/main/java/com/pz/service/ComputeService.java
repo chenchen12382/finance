@@ -39,18 +39,22 @@ public class ComputeService {
 
 
 
-
-    public void insert(Compute compute) {
-
+    public static void chickParam(Compute compute){
         AssertUtil.intIsNotEmpty(compute.getDx(),"请输入基本薪资！");
 
         //薪资计算
         AssertUtil.isNotEmpty(compute.getName(),"请选择员工！");
 
         AssertUtil.isNotEmpty(compute.getSfz(),"请输入身份证号！");
+    }
+
+
+    public void insert(Compute compute) {
 
 
 
+
+        chickParam(compute);
 
 
 
@@ -456,13 +460,15 @@ public class ComputeService {
 
 
 
-                        if(count>0){
-                            compute.setStart(start);
-                            compute.setOver(over);
-                            computeDao.update(compute);
-                        }else {
-                            computeDao.insert(compute);
-                        }
+//                        if(count>0){
+//                            compute.setStart(start);
+//                            compute.setOver(over);
+//                            computeDao.update(compute);
+//                        }else {
+//                            computeDao.insert(compute);
+//                        }
+
+                        judge(compute,start,over,count);
 
                     }
                 }
@@ -506,4 +512,61 @@ public class ComputeService {
         Compute compute = computeDao.selectForId(id);
         return compute;
     }
+
+    public void update(Compute compute) {
+
+        chickParam(compute);
+
+
+//        Date start = DateUtil.getFisrtDayOfNow();
+//        Date over = DateUtil.getLastDayOfDate(new Date());
+//
+//
+//        String sfz = compute.getSfz();
+//        Integer count=computeDao.findBySfz(sfz,start,over);
+//
+//
+////        if(count>0){
+////            compute.setStart(start);
+////            compute.setOver(over);
+////            computeDao.update(compute);
+////        }else {
+////            computeDao.insert(compute);
+////        }
+//        if(count>0){
+//            compute.setStart(start);
+//            compute.setOver(over);
+//            computeDao.update(compute);
+//        }else {
+//            computeDao.insertForId(compute);
+//        }
+
+        computeDao.updateForId(compute);
+
+    }
+
+
+    /**
+     * 判断是插入还是修改
+     *
+     * @param compute
+     * @param start
+     * @param over
+     * @param count
+     */
+    private void judge(Compute compute, Date start, Date over, Integer count){
+
+        if(count>0){
+            compute.setStart(start);
+            compute.setOver(over);
+            computeDao.update(compute);
+        }else {
+            computeDao.insert(compute);
+        }
+
+
+    }
+
+
 }
+
