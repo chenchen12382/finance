@@ -30,10 +30,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
+                               <#-- <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
                                     <div class="am-form-group tpl-table-list-select">
                                         <select data-am-selected="{btnSize: 'sm'}">
-              <option value="option1">所有类别</option>
+              <option value="option1">所有类别</option>-->
               <#--<option value="option2">IT业界</option>-->
               <#--<option value="option3">数码产品</option>-->
               <#--<option value="option3">笔记本电脑</option>-->
@@ -45,9 +45,9 @@
                                 </div>
                                 <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
                                     <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
-                                        <input type="text" class="am-form-field ">
+                                    <#--    <input type="text" class="am-form-field ">
                                         <span class="am-input-group-btn">
-            <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button"></button>
+            <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button"></button>-->
           </span>
                                     </div>
                                 </div>

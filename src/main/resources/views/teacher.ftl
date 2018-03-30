@@ -110,7 +110,6 @@
                                         </div>
                                         <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
                                             <thead>
-
                                             <tr>
                                                 <th>id</th>
                                                 <th>等级</th>
