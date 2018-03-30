@@ -12,7 +12,7 @@
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
                         <div class="widget am-cf">
                             <div class="widget-head am-cf">
-                                <div class="widget-title  am-cf">文章列表</div>
+                                <div class="widget-title  am-cf">员工列表</div>
 
 
                             </div>
@@ -40,14 +40,14 @@
               <#--<option value="option3">平板电脑</option>-->
               <#--<option value="option3">只能手机</option>-->
               <#--<option value="option3">超极本</option>-->
-            </select>
+          <#--  </select>
                                     </div>
                                 </div>
                                 <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
                                     <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
                                         <input type="text" class="am-form-field ">
                                         <span class="am-input-group-btn">
-            <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button"></button>
+            <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button"></button>-->
           </span>
                                     </div>
                                 </div>

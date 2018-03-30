@@ -18,9 +18,9 @@
 
 
                             </div>
-                            <div class="widget-body  am-fr">
+                          <#--  <div class="widget-body  am-fr">
 
-                                <div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+                                <#-- <div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
                                     <div class="am-form-group">
                                         <div class="am-btn-toolbar">
                                             <#--<div class="am-btn-group am-btn-group-xs">-->
@@ -28,12 +28,12 @@
                                                 <#--<button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 保存</button>-->
                                                 <#--<button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 审核</button>-->
                                                 <#--<button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>-->
-                                            <#--</div>-->
+                                            <#--</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
-                                    <div class="am-form-group tpl-table-list-select">
+                                    <#--<div class="am-form-group tpl-table-list-select">
                                         <select data-am-selected="{btnSize: 'sm'}">
                                           <option value="option1">所有类别</option>
                                           <#--<option value="option2">IT业界</option>-->
@@ -41,15 +41,15 @@
                                           <#--<option value="option3">笔记本电脑</option>-->
                                           <#--<option value="option3">平板电脑</option>-->
                                           <#--<option value="option3">只能手机</option>-->
-                                          <#--<option value="option3">超极本</option>-->
+                                          <#--<option value="option3">超极本</option>
                                         </select>
                                     </div>
-                                </div>
+                                </div>-->
                                 <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
                                     <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
-                                        <input type="text" class="am-form-field " placeholder="开发中,无效">
+                                       <#-- <input type="text" class="am-form-field " placeholder="开发中,无效">
                                         <span class="am-input-group-btn">
-            <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button"></button>
+            <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button"></button>-->
           </span>
                                     </div>
                                 </div>

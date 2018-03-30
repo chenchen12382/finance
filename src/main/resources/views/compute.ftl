@@ -8,18 +8,7 @@
 
         <!-- 内容区域 -->
         <div class="tpl-content-wrapper">
-            <#--<div class="container-fluid am-cf">-->
-                <#--&lt;#&ndash;<div class="row">&ndash;&gt;-->
-                    <#--&lt;#&ndash;<div class="am-u-sm-12 am-u-md-12 am-u-lg-9">&ndash;&gt;-->
-                        <#--&lt;#&ndash;<div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 薪酬计算工具 </div>&ndash;&gt;-->
-                        <#--&lt;#&ndash;<p class="page-header-description">薪酬计算工具。</p>&ndash;&gt;-->
-                    <#--&lt;#&ndash;</div>&ndash;&gt;-->
-                    <#--&lt;#&ndash;<div class="am-u-lg-3 tpl-index-settings-button">&ndash;&gt;-->
-                        <#--&lt;#&ndash;<button type="button" class="page-header-button"><span class="am-icon-paint-brush"></span> </button>&ndash;&gt;-->
-                    <#--&lt;#&ndash;</div>&ndash;&gt;-->
-                <#--&lt;#&ndash;</div>&ndash;&gt;-->
-
-            <#--</div>-->
+          
 
             <div class="row-content am-cf">
 
@@ -42,22 +31,22 @@
                                     <input type="hidden" id="f_id" value="${compute.getId()!''}">
 
                                     <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">中心名称: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">中心名称:</label>
                                         <div class="am-u-sm-2">
                                             <input type="text" class="tpl-form-input" id="f_center" name="center" value="${compute.getCenter()!""}" placeholder="请输入中心名称">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">姓名: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">姓名:</label>
                                         <div class="am-u-sm-2">
                                             <input type="text" class="tpl-form-input" id="f_name" value="${compute.getName()!""}" name="name" placeholder="请输入姓名">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">身份证号码: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">身份证号码:</label>
                                         <div class="am-u-sm-2">
                                             <input type="text" class="tpl-form-input" id="f_sfz" value="${compute.getSfz()!""}" name="sfz" placeholder="请输入身份证号码">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">职位: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">职位: </label>
                                         <div class="am-u-sm-2">
                                             <input type="text" class="tpl-form-input" id="f_work" name="work" value="${compute.getWork()!''}" placeholder="请输入职位">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
@@ -72,22 +61,22 @@
 
 
                                     <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">基本工资: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">基本工资: </label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_dx" name="dx" value="${compute.getDx()!''}"  placeholder="请输入基本工资">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">岗位工资: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">岗位工资: </label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_gwgz" name="gwgz" value="${compute.getGwgz()!''}" placeholder="请输入岗位工资">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">绩效工资: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">绩效工资:</label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_jxgz" name="jxgz" value="${compute.getJxgz()!''}" placeholder="请输入绩效工资">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">保密费: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">保密费: </label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_bmf" name="bmf" value="${compute.getBmf()!''}" placeholder="请输入保密费">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
@@ -96,22 +85,22 @@
                                     </div>
 
                                     <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">工资补差: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">工资补差: </label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_gzbc" name="gzbc" value="${compute.getGzbc()!''}" placeholder="请输入工资补差">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">出勤天数: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">出勤天数:</label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_cqts" name="cqts" value="${compute.getCqts()!''}" placeholder="请输入出勤天数">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">工资调整补差: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">工资调整补差: </label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_bfgz" name="bfgz" value="${compute.getBfgz()!''}" placeholder="请输入工资调整补差">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">饭贴: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">饭贴:</label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_ft" name="ft" value="${compute.getFt()!''}" placeholder="请输入饭贴">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
@@ -121,22 +110,22 @@
 
 
                                     <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">津贴: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">津贴: </label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_jt" name="jt" value="${compute.getJt()!''}" placeholder="请输入津贴">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">幼儿园补贴: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">幼儿园补贴: </label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_yeybt" name="yeybt" value="${compute.getYeybt()!''}" placeholder="请输入幼儿园补贴">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">提成奖金: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">提成奖金: </label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_tcjj" name="tcjj" value="${compute.getTcjj()!''}" placeholder="请输入提成奖金">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">课时费: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">课时费: </label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_bbj" name="bbj" value="${compute.getBbj()!''}" placeholder="请输入课时费">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
@@ -146,12 +135,12 @@
 
 
                                     <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">出差补贴: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">出差补贴: </label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_ccbt" name="ccbt" value="${compute.getCcbt()!''}" placeholder="请输入出差补贴">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">绩效系数: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">绩效系数: </label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_jxxs" name="jxxs" value="${compute.getJxxs()!''}" placeholder="请输入绩效系数">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
@@ -179,22 +168,22 @@
                                     <h2 style="text-align:center">应扣项目</h2>
 
                                     <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">产假扣款: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">产假扣款:</label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_cjkk" name="cjkk" value="${compute.getCjkk()!''}" placeholder="请输入产假扣款">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">事假扣款: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">事假扣款:</label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_sjkk" name="sjkk" value="${compute.getSjkk()!''}" placeholder="请输入事假扣款">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">病假扣款: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">病假扣款: </label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_bjkk" name="bjkk" value="${compute.getBjkk()!''}" placeholder="请输入病假扣款">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">旷工扣款: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">旷工扣款: </label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_kgkk" name="kgkk" value="${compute.getKgkk()!''}" placeholder="请输入旷工扣款">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
@@ -203,12 +192,12 @@
                                     </div>
 
                                     <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">迟到扣款: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">迟到扣款: </label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_cdkk" name="cdkk" value="${compute.getCdkk()!''}" placeholder="请输入迟到扣款">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">其他扣款: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">其他扣款:</label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_qtkk" name="qtkk" value="${compute.getQtkk()!''}" placeholder="请输入其他扣款">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
@@ -231,22 +220,22 @@
 
 
                                     <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">应发工资: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">应发工资: </label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_yfgz" name="yfgz" value="${compute.getYfgz()!''}" placeholder="请输入应发工资">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">个人社保合计: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">个人社保合计: </label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_grsbhj" name="grsbhj" value="${compute.getGrsbhj()!''}" placeholder="请输入个人社保合计">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">个人公积金: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">个人公积金:</label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_grgjj" name="grgjj" value="${compute.getGrgjj()!''}" placeholder="请输入个人公积金">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">个人所得税: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">个人所得税:</label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_grsds" name="grsds" value="${compute.getGrsds()!''}" placeholder="请输入个人所得税">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
@@ -255,17 +244,17 @@
                                     </div>
 
                                     <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">企业社保合计: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">企业社保合计: </label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_qysbhj" name="qysbhj" value="${compute.getQysbhj()!''}" placeholder="请输入企业社保合计">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">企业公积金: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">企业公积金: </label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_qygjj" name="qygjj" value="${compute.getQygjj()!''}" placeholder="请输入企业公积金">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->
                                         </div>
-                                        <label for="user-name" class="am-u-sm-1 am-form-label">实发工资: <span class="tpl-form-line-small-title">Title</span></label>
+                                        <label for="user-name" class="am-u-sm-1 am-form-label">实发工资: </label>
                                         <div class="am-u-sm-2">
                                             <input type="number" class="tpl-form-input" id="f_gzze" name="gzze" value="${compute.getGzze()!''}" placeholder="请输入实发工资">
                                         <#--<small>请填写标题文字10-20字左右。</small>-->

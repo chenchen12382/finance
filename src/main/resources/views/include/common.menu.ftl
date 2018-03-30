@@ -30,14 +30,14 @@
                 </#if>
 
             </li>
-
-            <!-- 新邮件 -->
+ <#--
+            <!-- 新邮件 
             <li class="am-dropdown tpl-dropdown" data-am-dropdown>
                 <a href="javascript:;" class="am-dropdown-toggle tpl-dropdown-toggle" data-am-dropdown-toggle>
                     <i class="am-icon-envelope"></i>
                     <span class="am-badge am-badge-success am-round item-feed-badge">4</span>
                 </a>
-                <!-- 弹出列表 -->
+                <!-- 弹出列表 
                 <ul class="am-dropdown-content tpl-dropdown-content">
                     <li class="tpl-dropdown-menu-messages">
                         <a href="javascript:;" class="tpl-dropdown-menu-messages-item am-cf">
@@ -84,14 +84,14 @@
                 </ul>
             </li>
 
-            <!-- 新提示 -->
+            <!-- 新提示
             <li class="am-dropdown" data-am-dropdown>
                 <a href="javascript:;" class="am-dropdown-toggle" data-am-dropdown-toggle>
                     <i class="am-icon-bell"></i>
                     <span class="am-badge am-badge-warning am-round item-feed-badge">5</span>
                 </a>
 
-                <!-- 弹出列表 -->
+                <!-- 弹出列表 
                 <ul class="am-dropdown-content tpl-dropdown-content">
                     <li class="tpl-dropdown-menu-notifications">
                         <a href="javascript:;" class="tpl-dropdown-menu-notifications-item am-cf">
@@ -135,7 +135,7 @@
                     </li>
                 </ul>
             </li>
-
+              -->
             <!-- 退出 -->
             <li class="am-text-sm">
                 <a href="javascript:logout();" id="logout">
